@@ -1,0 +1,18 @@
+Package: densgrad
+Type: Package
+Title: Distance sampling in presence of animal gradients
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Tiago",
+    family = "Marques",
+    role = c("aut", "cre"),
+    email = "tiago.marques@st-andrews.ac.uk"),
+    person(given = "Eric",
+    family = "Rexstad",
+    role = "aut",
+    email = "eric.rexstad@st-andrews.ac.uk"))
+Description: Abundance estimation using distance sampling in the presence of non-uniform animal distribution with respect to transects.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
