@@ -1,0 +1,144 @@
+---
+title: "Kangaroo distance sampling survey along roads"
+author: "Marques and Rexstad"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Kangaroo distance sampling survey along roads}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+
+## Make package functions available
+
+```{r}
+library(densgrad)
+```
+
+## Acquire data
+
+Data come from three sources:  
+
+- distance sampling survey (transect lengths, perpendicular distances and group size)
+- random locations within truncation distance of the transects (road)
+    - actually, random data don't appear to be part of the actual analysis
+- GPS collar data from telemetered kangaroos within truncation distance of transects
+
+```{r}
+real <- read.csv(file="../data/GPSpoints.txt", header=TRUE, sep="\t")
+rand <- read.csv(file="../data/Randpoints.txt", header=TRUE, sep="\t")
+```
+
+Make some adjustments to field names
+
+```{r}
+names(rand) <- c("infid","nearfid","dist","reserve","veg")
+names(real) <- c("infid","nearfid","dist","reserve","veg","animal")
+```
+
+Actual distance sampling survey data
+
+```{r}
+survey <- read.csv(file="../data/nonstratified_farrar.txt", header=TRUE, sep="\t")
+```
+
+
+### Data munging
+
+Transect 23 had no kangaroo detections, hence in the data the perpendicular distance is recorded as `NA`.  That record needs to be removed from the data set.  Similarly, the truncation distance is set here and the survey data edited accordingly.
+
+```{r}
+survey.truncation <- 150
+survey.data <- survey$Distance[!is.na(survey$Distance) & survey$Distance<survey.truncation]
+```
+
+## Density gradient estimation
+
+Apparently this optimisation is not really necessary, but perhaps used for plotting?
+
+```{r}
+gradient <- optim(par=c(35,1.2),
+                  fn=likdensity,
+                  distances=real$dist,
+                  truncation=100,
+                  control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
+if (gradient$convergence == 0) {
+  sigma.est <- gradient$par[1]
+  beta.est <- gradient$par[2]
+  likelihood <- gradient$value
+} else {
+  print("Convergence not achieved, no parameter estimates produced")
+} 
+```
+
+Let's see a plot of the fitted animal distribution with respect to transects
+
+```{r, fig.cap="Fitted animal density gradient"}
+xs <- seq(from=0, to=100)
+par(mfrow=c(1,1),mar=c(4,4,0.5,0.5))
+hist(real$dist,prob=T,main="",xlab="Distance (m)")
+lines(xs,pi.x(xs,sigma.est,beta.est,100),type="l",lty=2,lwd=2)
+```
+
+##  Joint likelihood estimation
+
+First the half normal detection function
+
+```{r}
+hn.det <- optim(par=c(50,35,35),
+                fn=full.lik.fx.HN,
+                detectdists=survey.data,
+                gpsdists=real$dist,
+                truncdet=survey.truncation,
+                truncden=100,
+                control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
+if (hn.det$convergence == 0) {
+  sigma.detect.est <- hn.det$par[1]
+  sigma.gradient.est <- hn.det$par[2]
+  beta.est <- hn.det$par[3]
+  likelihood.hn <- hn.det$value
+} else {
+  print("Convergence not achieved, no parameter estimates produced")
+} 
+```
+
+Next the hazard rate detection function
+
+```{r}
+hz.det <- optim(par=c(50,1.2,35,35),
+                fn=full.lik.fx.HR,
+                detectdists=survey.data,
+                gpsdists=real$dist,
+                truncdet=survey.truncation,
+                truncden=100,
+                control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
+if (hz.det$convergence == 0) {
+  sigma.detect.est <- hz.det$par[1]
+  beta.detect.est <- hz.det$par[4]
+  sigma.gradient.est <- hz.det$par[3]
+  beta.gradient.est <- hz.det$par[4]
+  likelihood.hz <- hz.det$value
+} else {
+  print("Convergence not achieved, no parameter estimates produced")
+} 
+```
+
+## Plots of estimated hazard rate detection function
+
+```{r, fig.cap="Fitted hazard rate detection function accounting for non-uniform distribution."}
+hist(survey$Distance[survey$Distance<150],
+     main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
+xs <- seq(from=0, to=150)
+lines(xs,60*detfn(z=xs,pars=hz.det$par[1:2],key="HR",adjn=0,w=150),
+      ylab="g(y)",lwd=2,type="l",lty=3)
+axis(2,at=seq(0,60,length=5),labels=seq(0,1,length=5))
+```
