@@ -12,7 +12,11 @@ Authors@R: c(
     role = "aut",
     email = "eric.rexstad@st-andrews.ac.uk"))
 Description: Abundance estimation using distance sampling in the presence of non-uniform animal distribution with respect to transects.
-License: What license is it under?
+License: GPL
 Encoding: UTF-8
 LazyData: true
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
