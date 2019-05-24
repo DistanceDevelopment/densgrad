@@ -1,7 +1,7 @@
 Package: densgrad
 Type: Package
 Title: Distance sampling in presence of animal gradients
-Version: 0.1.0
+Version: 0.1.5
 Authors@R: c(
     person(given = "Tiago",
     family = "Marques",
