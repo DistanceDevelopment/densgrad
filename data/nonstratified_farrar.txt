@@ -1,374 +1,374 @@
-Stratum	Area	Transect	Length	Distance	group
-Farrar	178.60	transect0	733.19	49.09	2
-Farrar	178.60	transect0	733.19	43.79	2
-Farrar	178.60	transect0	733.19	81.66	1
-Farrar	178.60	transect0	733.19	87.48	4
-Farrar	178.60	transect0	733.19	108.00	1
-Farrar	178.60	transect0	733.19	73.94	2
-Farrar	178.60	transect0	733.19	98.00	2
-Farrar	178.60	transect0	733.19	135.00	3
-Farrar	178.60	transect0	733.19	100.00	3
-Farrar	178.60	transect0	733.19	116.00	3
-Farrar	178.60	transect0	733.19	118.00	2
-Farrar	178.60	transect0	733.19	124.00	6
-Farrar	178.60	transect0	733.19	87.00	6
-Farrar	178.60	transect0	733.19	105.00	6
-Farrar	178.60	transect0	733.19	108.00	6
-Farrar	178.60	transect0	733.19	39.94	1
-Farrar	178.60	transect0	733.19	39.67	3
-Farrar	178.60	transect0	733.19	41.48	1
-Farrar	178.60	transect0	733.19	35.31	3
-Farrar	178.60	transect0	733.19	15.29	4
-Farrar	178.60	transect0	733.19	33.97	4
-Farrar	178.60	transect0	733.19	37.49	1
-Farrar	178.60	transect0	733.19	52.44	3
-Farrar	178.60	transect0	733.19	126.00	3
-Farrar	178.60	transect1	970.83	138.64	1
-Farrar	178.60	transect1	970.83	146.99	1
-Farrar	178.60	transect1	970.83	29.52	1
-Farrar	178.60	transect1	970.83	28.57	1
-Farrar	178.60	transect1	970.83	79.65	5
-Farrar	178.60	transect1	970.83	70.45	2
-Farrar	178.60	transect1	970.83	48.08	3
-Farrar	178.60	transect1	970.83	36.96	2
-Farrar	178.60	transect1	970.83	70.12	1
-Farrar	178.60	transect1	970.83	68.25	1
-Farrar	178.60	transect1	970.83	46.90	3
-Farrar	178.60	transect1	970.83	58.70	3
-Farrar	178.60	transect1	970.83	52.09	1
-Farrar	178.60	transect1	970.83	45.55	4
-Farrar	178.60	transect1	970.83	49.98	1
-Farrar	178.60	transect1	970.83	122.37	2
-Farrar	178.60	transect1	970.83	125.70	2
-Farrar	178.60	transect1	970.83	127.92	5
-Farrar	178.60	transect1	970.83	122.17	1
-Farrar	178.60	transect1	970.83	117.92	1
-Farrar	178.60	transect1	970.83	123.20	1
-Farrar	178.60	transect1	970.83	6.33	2
-Farrar	178.60	transect1	970.83	26.24	1
-Farrar	178.60	transect1	970.83	26.19	1
-Farrar	178.60	transect1	970.83	33.95	2
-Farrar	178.60	transect1	970.83	54.85	1
-Farrar	178.60	transect1	970.83	71.42	2
-Farrar	178.60	transect1	970.83	60.61	2
-Farrar	178.60	transect1	970.83	75.77	2
-Farrar	178.60	transect1	970.83	73.53	1
-Farrar	178.60	transect1	970.83	57.74	1
-Farrar	178.60	transect1	970.83	73.53	1
-Farrar	178.60	transect1	970.83	70.94	1
-Farrar	178.60	transect1	970.83	84.37	1
-Farrar	178.60	transect1	970.83	67.00	2
-Farrar	178.60	transect1	970.83	80.29	1
-Farrar	178.60	transect1	970.83	77.33	2
-Farrar	178.60	transect1	970.83	80.36	2
-Farrar	178.60	transect1	970.83	67.93	2
-Farrar	178.60	transect1	970.83	75.26	1
-Farrar	178.60	transect1	970.83	86.72	3
-Farrar	178.60	transect1	970.83	95.29	1
-Farrar	178.60	transect1	970.83	89.80	4
-Farrar	178.60	transect1	970.83	91.37	1
-Farrar	178.60	transect1	970.83	122.49	2
-Farrar	178.60	transect1	970.83	128.92	1
-Farrar	178.60	transect1	970.83	124.42	1
-Farrar	178.60	transect1	970.83	123.76	1
-Farrar	178.60	transect1	970.83	154.07	1
-Farrar	178.60	transect1	970.83	164.86	2
-Farrar	178.60	transect1	970.83	164.84	2
-Farrar	178.60	transect1	970.83	8.89	1
-Farrar	178.60	transect1	970.83	1.41	2
-Farrar	178.60	transect1	970.83	155.53	5
-Farrar	178.60	transect1	970.83	142.40	4
-Farrar	178.60	transect1	970.83	142.16	1
-Farrar	178.60	transect1	970.83	139.77	6
-Farrar	178.60	transect1	970.83	137.19	3
-Farrar	178.60	transect1	970.83	133.47	3
-Farrar	178.60	transect1	970.83	99.55	1
-Farrar	178.60	transect1	970.83	116.72	1
-Farrar	178.60	transect1	970.83	118.66	1
-Farrar	178.60	transect1	970.83	68.60	1
-Farrar	178.60	transect1	970.83	59.93	1
-Farrar	178.60	transect1	970.83	12.82	1
-Farrar	178.60	transect1	970.83	14.05	1
-Farrar	178.60	transect1	970.83	10.52	1
-Farrar	178.60	transect1	970.83	15.55	1
-Farrar	178.60	transect1	970.83	148.68	2
-Farrar	178.60	transect10	394.54	77.80	2
-Farrar	178.60	transect10	394.54	70.44	2
-Farrar	178.60	transect10	394.54	72.23	1
-Farrar	178.60	transect10	394.54	69.93	2
-Farrar	178.60	transect12	2257.25	16.00	2
-Farrar	178.60	transect12	2257.25	34.00	3
-Farrar	178.60	transect12	2257.25	47.14	2
-Farrar	178.60	transect12	2257.25	75.00	1
-Farrar	178.60	transect12	2257.25	41.00	5
-Farrar	178.60	transect12	2257.25	75.00	1
-Farrar	178.60	transect12	2257.25	34.50	5
-Farrar	178.60	transect12	2257.25	17.00	2
-Farrar	178.60	transect12	2257.25	21.00	1
-Farrar	178.60	transect12	2257.25	40.00	2
-Farrar	178.60	transect12	2257.25	109.00	6
-Farrar	178.60	transect12	2257.25	109.00	3
-Farrar	178.60	transect12	2257.25	106.00	3
-Farrar	178.60	transect12	2257.25	12.00	3
-Farrar	178.60	transect12	2257.25	5.00	2
-Farrar	178.60	transect12	2257.25	32.00	8
-Farrar	178.60	transect12	2257.25	61.00	10
-Farrar	178.60	transect12	2257.25	2.00	2
-Farrar	178.60	transect12	2257.25	4.00	2
-Farrar	178.60	transect12	2257.25	5.00	1
-Farrar	178.60	transect12	2257.25	19.00	2
-Farrar	178.60	transect12	2257.25	8.00	1
-Farrar	178.60	transect12	2257.25	12.00	2
-Farrar	178.60	transect12	2257.25	1.00	2
-Farrar	178.60	transect12	2257.25	8.00	1
-Farrar	178.60	transect12	2257.25	3.00	2
-Farrar	178.60	transect12	2257.25	7.00	3
-Farrar	178.60	transect12	2257.25	9.00	1
-Farrar	178.60	transect12	2257.25	32.00	2
-Farrar	178.60	transect12	2257.25	37.00	2
-Farrar	178.60	transect12	2257.25	29.00	2
-Farrar	178.60	transect12	2257.25	6.00	1
-Farrar	178.60	transect12	2257.25	2.00	3
-Farrar	178.60	transect12	2257.25	12.00	1
-Farrar	178.60	transect12	2257.25	7.00	2
-Farrar	178.60	transect12	2257.25	30.00	2
-Farrar	178.60	transect12	2257.25	31.00	1
-Farrar	178.60	transect12	2257.25	25.00	3
-Farrar	178.60	transect12	2257.25	34.00	2
-Farrar	178.60	transect14	719.77	17.14	4
-Farrar	178.60	transect14	719.77	15.09	2
-Farrar	178.60	transect14	719.77	15.12	1
-Farrar	178.60	transect14	719.77	20.09	2
-Farrar	178.60	transect14	719.77	46.14	1
-Farrar	178.60	transect14	719.77	51.86	1
-Farrar	178.60	transect14	719.77	63.18	3
-Farrar	178.60	transect14	719.77	85.70	1
-Farrar	178.60	transect14	719.77	56.55	3
-Farrar	178.60	transect14	719.77	55.93	3
-Farrar	178.60	transect14	719.77	44.61	2
-Farrar	178.60	transect14	719.77	66.18	1
-Farrar	178.60	transect14	719.77	43.47	2
-Farrar	178.60	transect14	719.77	72.85	4
-Farrar	178.60	transect14	719.77	64.73	1
-Farrar	178.60	transect14	719.77	84.19	2
-Farrar	178.60	transect14	719.77	123.00	2
-Farrar	178.60	transect14	719.77	91.18	3
-Farrar	178.60	transect14	719.77	86.11	2
-Farrar	178.60	transect14	719.77	91.18	2
-Farrar	178.60	transect14	719.77	98.41	5
-Farrar	178.60	transect14	719.77	97.51	5
-Farrar	178.60	transect14	719.77	97.86	2
-Farrar	178.60	transect14	719.77	101.68	2
-Farrar	178.60	transect14	719.77	71.90	2
-Farrar	178.60	transect14	719.77	32.77	2
-Farrar	178.60	transect14	719.77	86.55	2
-Farrar	178.60	transect14	719.77	47.31	1
-Farrar	178.60	transect14	719.77	13.54	1
-Farrar	178.60	transect14	719.77	12.00	1
-Farrar	178.60	transect14	719.77	133.00	3
-Farrar	178.60	transect14	719.77	133.00	1
-Farrar	178.60	transect15	460.61	16.44	1
-Farrar	178.60	transect15	460.61	14.92	1
-Farrar	178.60	transect15	460.61	10.78	1
-Farrar	178.60	transect15	460.61	1.09	2
-Farrar	178.60	transect15	460.61	2.32	3
-Farrar	178.60	transect16	586.75	21.75	1
-Farrar	178.60	transect16	586.75	25.76	1
-Farrar	178.60	transect16	586.75	49.90	1
-Farrar	178.60	transect16	586.75	32.86	1
-Farrar	178.60	transect16	586.75	25.00	2
-Farrar	178.60	transect16	586.75	24.96	1
-Farrar	178.60	transect18	498.91	168.00	2
-Farrar	178.60	transect18	498.91	99.51	3
-Farrar	178.60	transect18	498.91	105.95	3
-Farrar	178.60	transect18	498.91	187.00	3
-Farrar	178.60	transect19	1063.02	90.83	1
-Farrar	178.60	transect19	1063.02	50.03	2
-Farrar	178.60	transect19	1063.02	46.81	3
-Farrar	178.60	transect19	1063.02	46.44	1
-Farrar	178.60	transect19	1063.02	46.95	1
-Farrar	178.60	transect19	1063.02	28.99	1
-Farrar	178.60	transect19	1063.02	5.83	1
-Farrar	178.60	transect19	1063.02	15.56	1
-Farrar	178.60	transect19	1063.02	13.43	1
-Farrar	178.60	transect19	1063.02	20.38	1
-Farrar	178.60	transect19	1063.02	23.23	2
-Farrar	178.60	transect19	1063.02	68.86	1
-Farrar	178.60	transect19	1063.02	71.45	1
-Farrar	178.60	transect19	1063.02	82.03	3
-Farrar	178.60	transect19	1063.02	81.10	1
-Farrar	178.60	transect19	1063.02	77.57	2
-Farrar	178.60	transect19	1063.02	79.78	1
-Farrar	178.60	transect19	1063.02	62.12	2
-Farrar	178.60	transect19	1063.02	76.66	3
-Farrar	178.60	transect19	1063.02	62.59	1
-Farrar	178.60	transect19	1063.02	165.92	2
-Farrar	178.60	transect19	1063.02	160.92	2
-Farrar	178.60	transect19	1063.02	156.26	3
-Farrar	178.60	transect19	1063.02	85.34	3
-Farrar	178.60	transect19	1063.02	58.53	2
-Farrar	178.60	transect19	1063.02	68.83	1
-Farrar	178.60	transect19	1063.02	68.11	1
-Farrar	178.60	transect19	1063.02	85.03	1
-Farrar	178.60	transect19	1063.02	71.55	3
-Farrar	178.60	transect19	1063.02	50.89	1
-Farrar	178.60	transect19	1063.02	51.62	5
-Farrar	178.60	transect19	1063.02	107.00	2
-Farrar	178.60	transect19	1063.02	108.00	1
-Farrar	178.60	transect20	826.10	128.00	2
-Farrar	178.60	transect20	826.10	118.79	4
-Farrar	178.60	transect20	826.10	114.75	4
-Farrar	178.60	transect20	826.10	97.00	3
-Farrar	178.60	transect20	826.10	151.04	2
-Farrar	178.60	transect20	826.10	161.00	3
-Farrar	178.60	transect20	826.10	149.00	4
-Farrar	178.60	transect20	826.10	149.00	3
-Farrar	178.60	transect20	826.10	161.00	1
-Farrar	178.60	transect20	826.10	128.00	3
-Farrar	178.60	transect20	826.10	60.62	2
-Farrar	178.60	transect20	826.10	62.14	1
-Farrar	178.60	transect20	826.10	60.52	2
-Farrar	178.60	transect20	826.10	58.41	2
-Farrar	178.60	transect20	826.10	66.80	1
-Farrar	178.60	transect20	826.10	54.61	1
-Farrar	178.60	transect20	826.10	46.88	3
-Farrar	178.60	transect20	826.10	51.91	2
-Farrar	178.60	transect20	826.10	109.00	2
-Farrar	178.60	transect20	826.10	81.34	1
-Farrar	178.60	transect20	826.10	78.54	3
-Farrar	178.60	transect20	826.10	78.74	1
-Farrar	178.60	transect20	826.10	88.94	1
-Farrar	178.60	transect20	826.10	90.11	3
-Farrar	178.60	transect20	826.10	79.77	2
-Farrar	178.60	transect20	826.10	97.66	2
-Farrar	178.60	transect20	826.10	61.49	1
-Farrar	178.60	transect20	826.10	66.39	2
-Farrar	178.60	transect20	826.10	72.49	1
-Farrar	178.60	transect20	826.10	69.68	2
-Farrar	178.60	transect20	826.10	65.94	3
-Farrar	178.60	transect20	826.10	66.13	1
-Farrar	178.60	transect20	826.10	94.34	2
-Farrar	178.60	transect20	826.10	100.73	2
-Farrar	178.60	transect20	826.10	103.30	1
-Farrar	178.60	transect20	826.10	98.31	1
-Farrar	178.60	transect20	826.10	137.88	2
-Farrar	178.60	transect20	826.10	139.83	3
-Farrar	178.60	transect20	826.10	137.88	9
-Farrar	178.60	transect20	826.10	187.23	6
-Farrar	178.60	transect20	826.10	162.75	2
-Farrar	178.60	transect20	826.10	139.44	3
-Farrar	178.60	transect20	826.10	171.74	5
-Farrar	178.60	transect20	826.10	173.21	5
-Farrar	178.60	transect20	826.10	183.78	3
-Farrar	178.60	transect20	826.10	201.03	2
-Farrar	178.60	transect20	826.10	172.46	4
-Farrar	178.60	transect21	1086.21	169.00	2
-Farrar	178.60	transect21	1086.21	73.73	1
-Farrar	178.60	transect21	1086.21	74.24	1
-Farrar	178.60	transect21	1086.21	7.60	2
-Farrar	178.60	transect21	1086.21	62.85	6
-Farrar	178.60	transect21	1086.21	66.32	7
-Farrar	178.60	transect21	1086.21	36.17	5
-Farrar	178.60	transect21	1086.21	46.54	1
-Farrar	178.60	transect21	1086.21	46.58	3
-Farrar	178.60	transect21	1086.21	55.00	2
-Farrar	178.60	transect21	1086.21	53.55	1
-Farrar	178.60	transect21	1086.21	56.88	2
-Farrar	178.60	transect21	1086.21	63.07	3
-Farrar	178.60	transect21	1086.21	73.90	1
-Farrar	178.60	transect21	1086.21	74.64	6
-Farrar	178.60	transect21	1086.21	83.08	5
-Farrar	178.60	transect21	1086.21	95.25	2
-Farrar	178.60	transect21	1086.21	63.65	1
-Farrar	178.60	transect21	1086.21	85.45	5
-Farrar	178.60	transect21	1086.21	89.52	2
-Farrar	178.60	transect21	1086.21	93.66	5
-Farrar	178.60	transect21	1086.21	65.42	2
-Farrar	178.60	transect21	1086.21	92.34	4
-Farrar	178.60	transect21	1086.21	6.81	5
-Farrar	178.60	transect21	1086.21	8.45	2
-Farrar	178.60	transect21	1086.21	14.25	1
-Farrar	178.60	transect21	1086.21	17.05	2
-Farrar	178.60	transect21	1086.21	19.66	2
-Farrar	178.60	transect21	1086.21	27.06	1
-Farrar	178.60	transect21	1086.21	30.03	3
-Farrar	178.60	transect21	1086.21	32.44	1
-Farrar	178.60	transect21	1086.21	32.73	1
-Farrar	178.60	transect21	1086.21	48.73	1
-Farrar	178.60	transect21	1086.21	25.22	2
-Farrar	178.60	transect21	1086.21	38.74	2
-Farrar	178.60	transect21	1086.21	50.98	4
-Farrar	178.60	transect21	1086.21	168.00	3
-Farrar	178.60	transect21	1086.21	46.75	2
-Farrar	178.60	transect23	621.66		
-Farrar	178.60	transect4	867.33	61.89	2
-Farrar	178.60	transect4	867.33	66.39	3
-Farrar	178.60	transect4	867.33	76.49	5
-Farrar	178.60	transect4	867.33	80.81	3
-Farrar	178.60	transect4	867.33	82.16	2
-Farrar	178.60	transect4	867.33	60.32	1
-Farrar	178.60	transect4	867.33	67.69	2
-Farrar	178.60	transect4	867.33	71.62	1
-Farrar	178.60	transect4	867.33	65.57	2
-Farrar	178.60	transect4	867.33	63.44	2
-Farrar	178.60	transect4	867.33	67.43	1
-Farrar	178.60	transect4	867.33	85.15	1
-Farrar	178.60	transect4	867.33	47.81	1
-Farrar	178.60	transect4	867.33	44.68	1
-Farrar	178.60	transect4	867.33	35.75	1
-Farrar	178.60	transect4	867.33	33.50	1
-Farrar	178.60	transect4	867.33	9.61	1
-Farrar	178.60	transect4	867.33	11.34	1
-Farrar	178.60	transect4	867.33	9.04	1
-Farrar	178.60	transect4	867.33	7.30	1
-Farrar	178.60	transect7	745.40	25.82	4
-Farrar	178.60	transect7	745.40	29.43	1
-Farrar	178.60	transect7	745.40	26.30	1
-Farrar	178.60	transect7	745.40	35.91	1
-Farrar	178.60	transect7	745.40	28.11	2
-Farrar	178.60	transect7	745.40	29.80	1
-Farrar	178.60	transect7	745.40	35.15	1
-Farrar	178.60	transect7	745.40	19.10	1
-Farrar	178.60	transect7	745.40	51.28	3
-Farrar	178.60	transect7	745.40	30.21	1
-Farrar	178.60	transect7	745.40	13.27	2
-Farrar	178.60	transect8	1569.12	67.42	1
-Farrar	178.60	transect8	1569.12	65.03	2
-Farrar	178.60	transect8	1569.12	71.57	2
-Farrar	178.60	transect8	1569.12	71.36	2
-Farrar	178.60	transect8	1569.12	46.95	2
-Farrar	178.60	transect8	1569.12	31.23	3
-Farrar	178.60	transect8	1569.12	44.57	4
-Farrar	178.60	transect8	1569.12	22.56	2
-Farrar	178.60	transect8	1569.12	31.44	2
-Farrar	178.60	transect8	1569.12	34.49	2
-Farrar	178.60	transect8	1569.12	42.79	2
-Farrar	178.60	transect8	1569.12	43.79	5
-Farrar	178.60	transect8	1569.12	61.88	3
-Farrar	178.60	transect8	1569.12	31.04	2
-Farrar	178.60	transect8	1569.12	11.97	1
-Farrar	178.60	transect8	1569.12	15.90	1
-Farrar	178.60	transect8	1569.12	21.14	2
-Farrar	178.60	transect8	1569.12	36.80	2
-Farrar	178.60	transect8	1569.12	34.05	1
-Farrar	178.60	transect8	1569.12	28.96	2
-Farrar	178.60	transect8	1569.12	24.81	3
-Farrar	178.60	transect8	1569.12	28.74	1
-Farrar	178.60	transect8	1569.12	30.34	3
-Farrar	178.60	transect8	1569.12	28.96	3
-Farrar	178.60	transect8	1569.12	21.28	1
-Farrar	178.60	transect8	1569.12	21.16	2
-Farrar	178.60	transect8	1569.12	56.46	3
-Farrar	178.60	transect8	1569.12	53.66	2
-Farrar	178.60	transect8	1569.12	56.28	1
-Farrar	178.60	transect8	1569.12	56.39	1
-Farrar	178.60	transect8	1569.12	46.84	2
-Farrar	178.60	transect8	1569.12	32.93	1
-Farrar	178.60	transect8	1569.12	105.26	3
-Farrar	178.60	transect8	1569.12	88.55	1
-Farrar	178.60	transect8	1569.12	44.40	2
-Farrar	178.60	transect8	1569.12	102.41	2
-Farrar	178.60	transect8	1569.12	61.45	1
-Farrar	178.60	transect8	1569.12	64.75	2
-Farrar	178.60	transect8	1569.12	53.11	3
-Farrar	178.60	transect8	1569.12	75.23	1
+"Stratum"	"Area"	"Transect"	"Length"	"Distance"	"group"
+"1"	"Farrar"	178.6	"transect0"	733.19	49.09	2
+"2"	"Farrar"	178.6	"transect0"	733.19	43.79	2
+"3"	"Farrar"	178.6	"transect0"	733.19	81.66	1
+"4"	"Farrar"	178.6	"transect0"	733.19	87.48	4
+"5"	"Farrar"	178.6	"transect0"	733.19	108	1
+"6"	"Farrar"	178.6	"transect0"	733.19	73.94	2
+"7"	"Farrar"	178.6	"transect0"	733.19	98	2
+"8"	"Farrar"	178.6	"transect0"	733.19	135	3
+"9"	"Farrar"	178.6	"transect0"	733.19	100	3
+"10"	"Farrar"	178.6	"transect0"	733.19	116	3
+"11"	"Farrar"	178.6	"transect0"	733.19	118	2
+"12"	"Farrar"	178.6	"transect0"	733.19	124	6
+"13"	"Farrar"	178.6	"transect0"	733.19	87	6
+"14"	"Farrar"	178.6	"transect0"	733.19	105	6
+"15"	"Farrar"	178.6	"transect0"	733.19	108	6
+"16"	"Farrar"	178.6	"transect0"	733.19	39.94	1
+"17"	"Farrar"	178.6	"transect0"	733.19	39.67	3
+"18"	"Farrar"	178.6	"transect0"	733.19	41.48	1
+"19"	"Farrar"	178.6	"transect0"	733.19	35.31	3
+"20"	"Farrar"	178.6	"transect0"	733.19	15.29	4
+"21"	"Farrar"	178.6	"transect0"	733.19	33.97	4
+"22"	"Farrar"	178.6	"transect0"	733.19	37.49	1
+"23"	"Farrar"	178.6	"transect0"	733.19	52.44	3
+"24"	"Farrar"	178.6	"transect0"	733.19	126	3
+"25"	"Farrar"	178.6	"transect1"	970.83	138.64	1
+"26"	"Farrar"	178.6	"transect1"	970.83	146.99	1
+"27"	"Farrar"	178.6	"transect1"	970.83	29.52	1
+"28"	"Farrar"	178.6	"transect1"	970.83	28.57	1
+"29"	"Farrar"	178.6	"transect1"	970.83	79.65	5
+"30"	"Farrar"	178.6	"transect1"	970.83	70.45	2
+"31"	"Farrar"	178.6	"transect1"	970.83	48.08	3
+"32"	"Farrar"	178.6	"transect1"	970.83	36.96	2
+"33"	"Farrar"	178.6	"transect1"	970.83	70.12	1
+"34"	"Farrar"	178.6	"transect1"	970.83	68.25	1
+"35"	"Farrar"	178.6	"transect1"	970.83	46.9	3
+"36"	"Farrar"	178.6	"transect1"	970.83	58.7	3
+"37"	"Farrar"	178.6	"transect1"	970.83	52.09	1
+"38"	"Farrar"	178.6	"transect1"	970.83	45.55	4
+"39"	"Farrar"	178.6	"transect1"	970.83	49.98	1
+"40"	"Farrar"	178.6	"transect1"	970.83	122.37	2
+"41"	"Farrar"	178.6	"transect1"	970.83	125.7	2
+"42"	"Farrar"	178.6	"transect1"	970.83	127.92	5
+"43"	"Farrar"	178.6	"transect1"	970.83	122.17	1
+"44"	"Farrar"	178.6	"transect1"	970.83	117.92	1
+"45"	"Farrar"	178.6	"transect1"	970.83	123.2	1
+"46"	"Farrar"	178.6	"transect1"	970.83	6.33	2
+"47"	"Farrar"	178.6	"transect1"	970.83	26.24	1
+"48"	"Farrar"	178.6	"transect1"	970.83	26.19	1
+"49"	"Farrar"	178.6	"transect1"	970.83	33.95	2
+"50"	"Farrar"	178.6	"transect1"	970.83	54.85	1
+"51"	"Farrar"	178.6	"transect1"	970.83	71.42	2
+"52"	"Farrar"	178.6	"transect1"	970.83	60.61	2
+"53"	"Farrar"	178.6	"transect1"	970.83	75.77	2
+"54"	"Farrar"	178.6	"transect1"	970.83	73.53	1
+"55"	"Farrar"	178.6	"transect1"	970.83	57.74	1
+"56"	"Farrar"	178.6	"transect1"	970.83	73.53	1
+"57"	"Farrar"	178.6	"transect1"	970.83	70.94	1
+"58"	"Farrar"	178.6	"transect1"	970.83	84.37	1
+"59"	"Farrar"	178.6	"transect1"	970.83	67	2
+"60"	"Farrar"	178.6	"transect1"	970.83	80.29	1
+"61"	"Farrar"	178.6	"transect1"	970.83	77.33	2
+"62"	"Farrar"	178.6	"transect1"	970.83	80.36	2
+"63"	"Farrar"	178.6	"transect1"	970.83	67.93	2
+"64"	"Farrar"	178.6	"transect1"	970.83	75.26	1
+"65"	"Farrar"	178.6	"transect1"	970.83	86.72	3
+"66"	"Farrar"	178.6	"transect1"	970.83	95.29	1
+"67"	"Farrar"	178.6	"transect1"	970.83	89.8	4
+"68"	"Farrar"	178.6	"transect1"	970.83	91.37	1
+"69"	"Farrar"	178.6	"transect1"	970.83	122.49	2
+"70"	"Farrar"	178.6	"transect1"	970.83	128.92	1
+"71"	"Farrar"	178.6	"transect1"	970.83	124.42	1
+"72"	"Farrar"	178.6	"transect1"	970.83	123.76	1
+"73"	"Farrar"	178.6	"transect1"	970.83	154.07	1
+"74"	"Farrar"	178.6	"transect1"	970.83	164.86	2
+"75"	"Farrar"	178.6	"transect1"	970.83	164.84	2
+"76"	"Farrar"	178.6	"transect1"	970.83	8.89	1
+"77"	"Farrar"	178.6	"transect1"	970.83	1.41	2
+"78"	"Farrar"	178.6	"transect1"	970.83	155.53	5
+"79"	"Farrar"	178.6	"transect1"	970.83	142.4	4
+"80"	"Farrar"	178.6	"transect1"	970.83	142.16	1
+"81"	"Farrar"	178.6	"transect1"	970.83	139.77	6
+"82"	"Farrar"	178.6	"transect1"	970.83	137.19	3
+"83"	"Farrar"	178.6	"transect1"	970.83	133.47	3
+"84"	"Farrar"	178.6	"transect1"	970.83	99.55	1
+"85"	"Farrar"	178.6	"transect1"	970.83	116.72	1
+"86"	"Farrar"	178.6	"transect1"	970.83	118.66	1
+"87"	"Farrar"	178.6	"transect1"	970.83	68.6	1
+"88"	"Farrar"	178.6	"transect1"	970.83	59.93	1
+"89"	"Farrar"	178.6	"transect1"	970.83	12.82	1
+"90"	"Farrar"	178.6	"transect1"	970.83	14.05	1
+"91"	"Farrar"	178.6	"transect1"	970.83	10.52	1
+"92"	"Farrar"	178.6	"transect1"	970.83	15.55	1
+"93"	"Farrar"	178.6	"transect1"	970.83	148.68	2
+"94"	"Farrar"	178.6	"transect10"	394.54	77.8	2
+"95"	"Farrar"	178.6	"transect10"	394.54	70.44	2
+"96"	"Farrar"	178.6	"transect10"	394.54	72.23	1
+"97"	"Farrar"	178.6	"transect10"	394.54	69.93	2
+"98"	"Farrar"	178.6	"transect12"	2257.25	16	2
+"99"	"Farrar"	178.6	"transect12"	2257.25	34	3
+"100"	"Farrar"	178.6	"transect12"	2257.25	47.14	2
+"101"	"Farrar"	178.6	"transect12"	2257.25	75	1
+"102"	"Farrar"	178.6	"transect12"	2257.25	41	5
+"103"	"Farrar"	178.6	"transect12"	2257.25	75	1
+"104"	"Farrar"	178.6	"transect12"	2257.25	34.5	5
+"105"	"Farrar"	178.6	"transect12"	2257.25	17	2
+"106"	"Farrar"	178.6	"transect12"	2257.25	21	1
+"107"	"Farrar"	178.6	"transect12"	2257.25	40	2
+"108"	"Farrar"	178.6	"transect12"	2257.25	109	6
+"109"	"Farrar"	178.6	"transect12"	2257.25	109	3
+"110"	"Farrar"	178.6	"transect12"	2257.25	106	3
+"111"	"Farrar"	178.6	"transect12"	2257.25	12	3
+"112"	"Farrar"	178.6	"transect12"	2257.25	5	2
+"113"	"Farrar"	178.6	"transect12"	2257.25	32	8
+"114"	"Farrar"	178.6	"transect12"	2257.25	61	10
+"115"	"Farrar"	178.6	"transect12"	2257.25	2	2
+"116"	"Farrar"	178.6	"transect12"	2257.25	4	2
+"117"	"Farrar"	178.6	"transect12"	2257.25	5	1
+"118"	"Farrar"	178.6	"transect12"	2257.25	19	2
+"119"	"Farrar"	178.6	"transect12"	2257.25	8	1
+"120"	"Farrar"	178.6	"transect12"	2257.25	12	2
+"121"	"Farrar"	178.6	"transect12"	2257.25	1	2
+"122"	"Farrar"	178.6	"transect12"	2257.25	8	1
+"123"	"Farrar"	178.6	"transect12"	2257.25	3	2
+"124"	"Farrar"	178.6	"transect12"	2257.25	7	3
+"125"	"Farrar"	178.6	"transect12"	2257.25	9	1
+"126"	"Farrar"	178.6	"transect12"	2257.25	32	2
+"127"	"Farrar"	178.6	"transect12"	2257.25	37	2
+"128"	"Farrar"	178.6	"transect12"	2257.25	29	2
+"129"	"Farrar"	178.6	"transect12"	2257.25	6	1
+"130"	"Farrar"	178.6	"transect12"	2257.25	2	3
+"131"	"Farrar"	178.6	"transect12"	2257.25	12	1
+"132"	"Farrar"	178.6	"transect12"	2257.25	7	2
+"133"	"Farrar"	178.6	"transect12"	2257.25	30	2
+"134"	"Farrar"	178.6	"transect12"	2257.25	31	1
+"135"	"Farrar"	178.6	"transect12"	2257.25	25	3
+"136"	"Farrar"	178.6	"transect12"	2257.25	34	2
+"137"	"Farrar"	178.6	"transect14"	719.77	17.14	4
+"138"	"Farrar"	178.6	"transect14"	719.77	15.09	2
+"139"	"Farrar"	178.6	"transect14"	719.77	15.12	1
+"140"	"Farrar"	178.6	"transect14"	719.77	20.09	2
+"141"	"Farrar"	178.6	"transect14"	719.77	46.14	1
+"142"	"Farrar"	178.6	"transect14"	719.77	51.86	1
+"143"	"Farrar"	178.6	"transect14"	719.77	63.18	3
+"144"	"Farrar"	178.6	"transect14"	719.77	85.7	1
+"145"	"Farrar"	178.6	"transect14"	719.77	56.55	3
+"146"	"Farrar"	178.6	"transect14"	719.77	55.93	3
+"147"	"Farrar"	178.6	"transect14"	719.77	44.61	2
+"148"	"Farrar"	178.6	"transect14"	719.77	66.18	1
+"149"	"Farrar"	178.6	"transect14"	719.77	43.47	2
+"150"	"Farrar"	178.6	"transect14"	719.77	72.85	4
+"151"	"Farrar"	178.6	"transect14"	719.77	64.73	1
+"152"	"Farrar"	178.6	"transect14"	719.77	84.19	2
+"153"	"Farrar"	178.6	"transect14"	719.77	123	2
+"154"	"Farrar"	178.6	"transect14"	719.77	91.18	3
+"155"	"Farrar"	178.6	"transect14"	719.77	86.11	2
+"156"	"Farrar"	178.6	"transect14"	719.77	91.18	2
+"157"	"Farrar"	178.6	"transect14"	719.77	98.41	5
+"158"	"Farrar"	178.6	"transect14"	719.77	97.51	5
+"159"	"Farrar"	178.6	"transect14"	719.77	97.86	2
+"160"	"Farrar"	178.6	"transect14"	719.77	101.68	2
+"161"	"Farrar"	178.6	"transect14"	719.77	71.9	2
+"162"	"Farrar"	178.6	"transect14"	719.77	32.77	2
+"163"	"Farrar"	178.6	"transect14"	719.77	86.55	2
+"164"	"Farrar"	178.6	"transect14"	719.77	47.31	1
+"165"	"Farrar"	178.6	"transect14"	719.77	13.54	1
+"166"	"Farrar"	178.6	"transect14"	719.77	12	1
+"167"	"Farrar"	178.6	"transect14"	719.77	133	3
+"168"	"Farrar"	178.6	"transect14"	719.77	133	1
+"169"	"Farrar"	178.6	"transect15"	460.61	16.44	1
+"170"	"Farrar"	178.6	"transect15"	460.61	14.92	1
+"171"	"Farrar"	178.6	"transect15"	460.61	10.78	1
+"172"	"Farrar"	178.6	"transect15"	460.61	1.09	2
+"173"	"Farrar"	178.6	"transect15"	460.61	2.32	3
+"174"	"Farrar"	178.6	"transect16"	586.75	21.75	1
+"175"	"Farrar"	178.6	"transect16"	586.75	25.76	1
+"176"	"Farrar"	178.6	"transect16"	586.75	49.9	1
+"177"	"Farrar"	178.6	"transect16"	586.75	32.86	1
+"178"	"Farrar"	178.6	"transect16"	586.75	25	2
+"179"	"Farrar"	178.6	"transect16"	586.75	24.96	1
+"180"	"Farrar"	178.6	"transect18"	498.91	168	2
+"181"	"Farrar"	178.6	"transect18"	498.91	99.51	3
+"182"	"Farrar"	178.6	"transect18"	498.91	105.95	3
+"183"	"Farrar"	178.6	"transect18"	498.91	187	3
+"184"	"Farrar"	178.6	"transect19"	1063.02	90.83	1
+"185"	"Farrar"	178.6	"transect19"	1063.02	50.03	2
+"186"	"Farrar"	178.6	"transect19"	1063.02	46.81	3
+"187"	"Farrar"	178.6	"transect19"	1063.02	46.44	1
+"188"	"Farrar"	178.6	"transect19"	1063.02	46.95	1
+"189"	"Farrar"	178.6	"transect19"	1063.02	28.99	1
+"190"	"Farrar"	178.6	"transect19"	1063.02	5.83	1
+"191"	"Farrar"	178.6	"transect19"	1063.02	15.56	1
+"192"	"Farrar"	178.6	"transect19"	1063.02	13.43	1
+"193"	"Farrar"	178.6	"transect19"	1063.02	20.38	1
+"194"	"Farrar"	178.6	"transect19"	1063.02	23.23	2
+"195"	"Farrar"	178.6	"transect19"	1063.02	68.86	1
+"196"	"Farrar"	178.6	"transect19"	1063.02	71.45	1
+"197"	"Farrar"	178.6	"transect19"	1063.02	82.03	3
+"198"	"Farrar"	178.6	"transect19"	1063.02	81.1	1
+"199"	"Farrar"	178.6	"transect19"	1063.02	77.57	2
+"200"	"Farrar"	178.6	"transect19"	1063.02	79.78	1
+"201"	"Farrar"	178.6	"transect19"	1063.02	62.12	2
+"202"	"Farrar"	178.6	"transect19"	1063.02	76.66	3
+"203"	"Farrar"	178.6	"transect19"	1063.02	62.59	1
+"204"	"Farrar"	178.6	"transect19"	1063.02	165.92	2
+"205"	"Farrar"	178.6	"transect19"	1063.02	160.92	2
+"206"	"Farrar"	178.6	"transect19"	1063.02	156.26	3
+"207"	"Farrar"	178.6	"transect19"	1063.02	85.34	3
+"208"	"Farrar"	178.6	"transect19"	1063.02	58.53	2
+"209"	"Farrar"	178.6	"transect19"	1063.02	68.83	1
+"210"	"Farrar"	178.6	"transect19"	1063.02	68.11	1
+"211"	"Farrar"	178.6	"transect19"	1063.02	85.03	1
+"212"	"Farrar"	178.6	"transect19"	1063.02	71.55	3
+"213"	"Farrar"	178.6	"transect19"	1063.02	50.89	1
+"214"	"Farrar"	178.6	"transect19"	1063.02	51.62	5
+"215"	"Farrar"	178.6	"transect19"	1063.02	107	2
+"216"	"Farrar"	178.6	"transect19"	1063.02	108	1
+"217"	"Farrar"	178.6	"transect20"	826.1	128	2
+"218"	"Farrar"	178.6	"transect20"	826.1	118.79	4
+"219"	"Farrar"	178.6	"transect20"	826.1	114.75	4
+"220"	"Farrar"	178.6	"transect20"	826.1	97	3
+"221"	"Farrar"	178.6	"transect20"	826.1	151.04	2
+"222"	"Farrar"	178.6	"transect20"	826.1	161	3
+"223"	"Farrar"	178.6	"transect20"	826.1	149	4
+"224"	"Farrar"	178.6	"transect20"	826.1	149	3
+"225"	"Farrar"	178.6	"transect20"	826.1	161	1
+"226"	"Farrar"	178.6	"transect20"	826.1	128	3
+"227"	"Farrar"	178.6	"transect20"	826.1	60.62	2
+"228"	"Farrar"	178.6	"transect20"	826.1	62.14	1
+"229"	"Farrar"	178.6	"transect20"	826.1	60.52	2
+"230"	"Farrar"	178.6	"transect20"	826.1	58.41	2
+"231"	"Farrar"	178.6	"transect20"	826.1	66.8	1
+"232"	"Farrar"	178.6	"transect20"	826.1	54.61	1
+"233"	"Farrar"	178.6	"transect20"	826.1	46.88	3
+"234"	"Farrar"	178.6	"transect20"	826.1	51.91	2
+"235"	"Farrar"	178.6	"transect20"	826.1	109	2
+"236"	"Farrar"	178.6	"transect20"	826.1	81.34	1
+"237"	"Farrar"	178.6	"transect20"	826.1	78.54	3
+"238"	"Farrar"	178.6	"transect20"	826.1	78.74	1
+"239"	"Farrar"	178.6	"transect20"	826.1	88.94	1
+"240"	"Farrar"	178.6	"transect20"	826.1	90.11	3
+"241"	"Farrar"	178.6	"transect20"	826.1	79.77	2
+"242"	"Farrar"	178.6	"transect20"	826.1	97.66	2
+"243"	"Farrar"	178.6	"transect20"	826.1	61.49	1
+"244"	"Farrar"	178.6	"transect20"	826.1	66.39	2
+"245"	"Farrar"	178.6	"transect20"	826.1	72.49	1
+"246"	"Farrar"	178.6	"transect20"	826.1	69.68	2
+"247"	"Farrar"	178.6	"transect20"	826.1	65.94	3
+"248"	"Farrar"	178.6	"transect20"	826.1	66.13	1
+"249"	"Farrar"	178.6	"transect20"	826.1	94.34	2
+"250"	"Farrar"	178.6	"transect20"	826.1	100.73	2
+"251"	"Farrar"	178.6	"transect20"	826.1	103.3	1
+"252"	"Farrar"	178.6	"transect20"	826.1	98.31	1
+"253"	"Farrar"	178.6	"transect20"	826.1	137.88	2
+"254"	"Farrar"	178.6	"transect20"	826.1	139.83	3
+"255"	"Farrar"	178.6	"transect20"	826.1	137.88	9
+"256"	"Farrar"	178.6	"transect20"	826.1	187.23	6
+"257"	"Farrar"	178.6	"transect20"	826.1	162.75	2
+"258"	"Farrar"	178.6	"transect20"	826.1	139.44	3
+"259"	"Farrar"	178.6	"transect20"	826.1	171.74	5
+"260"	"Farrar"	178.6	"transect20"	826.1	173.21	5
+"261"	"Farrar"	178.6	"transect20"	826.1	183.78	3
+"262"	"Farrar"	178.6	"transect20"	826.1	201.03	2
+"263"	"Farrar"	178.6	"transect20"	826.1	172.46	4
+"264"	"Farrar"	178.6	"transect21"	1086.21	169	2
+"265"	"Farrar"	178.6	"transect21"	1086.21	73.73	1
+"266"	"Farrar"	178.6	"transect21"	1086.21	74.24	1
+"267"	"Farrar"	178.6	"transect21"	1086.21	7.6	2
+"268"	"Farrar"	178.6	"transect21"	1086.21	62.85	6
+"269"	"Farrar"	178.6	"transect21"	1086.21	66.32	7
+"270"	"Farrar"	178.6	"transect21"	1086.21	36.17	5
+"271"	"Farrar"	178.6	"transect21"	1086.21	46.54	1
+"272"	"Farrar"	178.6	"transect21"	1086.21	46.58	3
+"273"	"Farrar"	178.6	"transect21"	1086.21	55	2
+"274"	"Farrar"	178.6	"transect21"	1086.21	53.55	1
+"275"	"Farrar"	178.6	"transect21"	1086.21	56.88	2
+"276"	"Farrar"	178.6	"transect21"	1086.21	63.07	3
+"277"	"Farrar"	178.6	"transect21"	1086.21	73.9	1
+"278"	"Farrar"	178.6	"transect21"	1086.21	74.64	6
+"279"	"Farrar"	178.6	"transect21"	1086.21	83.08	5
+"280"	"Farrar"	178.6	"transect21"	1086.21	95.25	2
+"281"	"Farrar"	178.6	"transect21"	1086.21	63.65	1
+"282"	"Farrar"	178.6	"transect21"	1086.21	85.45	5
+"283"	"Farrar"	178.6	"transect21"	1086.21	89.52	2
+"284"	"Farrar"	178.6	"transect21"	1086.21	93.66	5
+"285"	"Farrar"	178.6	"transect21"	1086.21	65.42	2
+"286"	"Farrar"	178.6	"transect21"	1086.21	92.34	4
+"287"	"Farrar"	178.6	"transect21"	1086.21	6.81	5
+"288"	"Farrar"	178.6	"transect21"	1086.21	8.45	2
+"289"	"Farrar"	178.6	"transect21"	1086.21	14.25	1
+"290"	"Farrar"	178.6	"transect21"	1086.21	17.05	2
+"291"	"Farrar"	178.6	"transect21"	1086.21	19.66	2
+"292"	"Farrar"	178.6	"transect21"	1086.21	27.06	1
+"293"	"Farrar"	178.6	"transect21"	1086.21	30.03	3
+"294"	"Farrar"	178.6	"transect21"	1086.21	32.44	1
+"295"	"Farrar"	178.6	"transect21"	1086.21	32.73	1
+"296"	"Farrar"	178.6	"transect21"	1086.21	48.73	1
+"297"	"Farrar"	178.6	"transect21"	1086.21	25.22	2
+"298"	"Farrar"	178.6	"transect21"	1086.21	38.74	2
+"299"	"Farrar"	178.6	"transect21"	1086.21	50.98	4
+"300"	"Farrar"	178.6	"transect21"	1086.21	168	3
+"301"	"Farrar"	178.6	"transect21"	1086.21	46.75	2
+"302"	"Farrar"	178.6	"transect23"	621.66	NA	NA
+"303"	"Farrar"	178.6	"transect4"	867.33	61.89	2
+"304"	"Farrar"	178.6	"transect4"	867.33	66.39	3
+"305"	"Farrar"	178.6	"transect4"	867.33	76.49	5
+"306"	"Farrar"	178.6	"transect4"	867.33	80.81	3
+"307"	"Farrar"	178.6	"transect4"	867.33	82.16	2
+"308"	"Farrar"	178.6	"transect4"	867.33	60.32	1
+"309"	"Farrar"	178.6	"transect4"	867.33	67.69	2
+"310"	"Farrar"	178.6	"transect4"	867.33	71.62	1
+"311"	"Farrar"	178.6	"transect4"	867.33	65.57	2
+"312"	"Farrar"	178.6	"transect4"	867.33	63.44	2
+"313"	"Farrar"	178.6	"transect4"	867.33	67.43	1
+"314"	"Farrar"	178.6	"transect4"	867.33	85.15	1
+"315"	"Farrar"	178.6	"transect4"	867.33	47.81	1
+"316"	"Farrar"	178.6	"transect4"	867.33	44.68	1
+"317"	"Farrar"	178.6	"transect4"	867.33	35.75	1
+"318"	"Farrar"	178.6	"transect4"	867.33	33.5	1
+"319"	"Farrar"	178.6	"transect4"	867.33	9.61	1
+"320"	"Farrar"	178.6	"transect4"	867.33	11.34	1
+"321"	"Farrar"	178.6	"transect4"	867.33	9.04	1
+"322"	"Farrar"	178.6	"transect4"	867.33	7.3	1
+"323"	"Farrar"	178.6	"transect7"	745.4	25.82	4
+"324"	"Farrar"	178.6	"transect7"	745.4	29.43	1
+"325"	"Farrar"	178.6	"transect7"	745.4	26.3	1
+"326"	"Farrar"	178.6	"transect7"	745.4	35.91	1
+"327"	"Farrar"	178.6	"transect7"	745.4	28.11	2
+"328"	"Farrar"	178.6	"transect7"	745.4	29.8	1
+"329"	"Farrar"	178.6	"transect7"	745.4	35.15	1
+"330"	"Farrar"	178.6	"transect7"	745.4	19.1	1
+"331"	"Farrar"	178.6	"transect7"	745.4	51.28	3
+"332"	"Farrar"	178.6	"transect7"	745.4	30.21	1
+"333"	"Farrar"	178.6	"transect7"	745.4	13.27	2
+"334"	"Farrar"	178.6	"transect8"	1569.12	67.42	1
+"335"	"Farrar"	178.6	"transect8"	1569.12	65.03	2
+"336"	"Farrar"	178.6	"transect8"	1569.12	71.57	2
+"337"	"Farrar"	178.6	"transect8"	1569.12	71.36	2
+"338"	"Farrar"	178.6	"transect8"	1569.12	46.95	2
+"339"	"Farrar"	178.6	"transect8"	1569.12	31.23	3
+"340"	"Farrar"	178.6	"transect8"	1569.12	44.57	4
+"341"	"Farrar"	178.6	"transect8"	1569.12	22.56	2
+"342"	"Farrar"	178.6	"transect8"	1569.12	31.44	2
+"343"	"Farrar"	178.6	"transect8"	1569.12	34.49	2
+"344"	"Farrar"	178.6	"transect8"	1569.12	42.79	2
+"345"	"Farrar"	178.6	"transect8"	1569.12	43.79	5
+"346"	"Farrar"	178.6	"transect8"	1569.12	61.88	3
+"347"	"Farrar"	178.6	"transect8"	1569.12	31.04	2
+"348"	"Farrar"	178.6	"transect8"	1569.12	11.97	1
+"349"	"Farrar"	178.6	"transect8"	1569.12	15.9	1
+"350"	"Farrar"	178.6	"transect8"	1569.12	21.14	2
+"351"	"Farrar"	178.6	"transect8"	1569.12	36.8	2
+"352"	"Farrar"	178.6	"transect8"	1569.12	34.05	1
+"353"	"Farrar"	178.6	"transect8"	1569.12	28.96	2
+"354"	"Farrar"	178.6	"transect8"	1569.12	24.81	3
+"355"	"Farrar"	178.6	"transect8"	1569.12	28.74	1
+"356"	"Farrar"	178.6	"transect8"	1569.12	30.34	3
+"357"	"Farrar"	178.6	"transect8"	1569.12	28.96	3
+"358"	"Farrar"	178.6	"transect8"	1569.12	21.28	1
+"359"	"Farrar"	178.6	"transect8"	1569.12	21.16	2
+"360"	"Farrar"	178.6	"transect8"	1569.12	56.46	3
+"361"	"Farrar"	178.6	"transect8"	1569.12	53.66	2
+"362"	"Farrar"	178.6	"transect8"	1569.12	56.28	1
+"363"	"Farrar"	178.6	"transect8"	1569.12	56.39	1
+"364"	"Farrar"	178.6	"transect8"	1569.12	46.84	2
+"365"	"Farrar"	178.6	"transect8"	1569.12	32.93	1
+"366"	"Farrar"	178.6	"transect8"	1569.12	105.26	3
+"367"	"Farrar"	178.6	"transect8"	1569.12	88.55	1
+"368"	"Farrar"	178.6	"transect8"	1569.12	44.4	2
+"369"	"Farrar"	178.6	"transect8"	1569.12	102.41	2
+"370"	"Farrar"	178.6	"transect8"	1569.12	61.45	1
+"371"	"Farrar"	178.6	"transect8"	1569.12	64.75	2
+"372"	"Farrar"	178.6	"transect8"	1569.12	53.11	3
+"373"	"Farrar"	178.6	"transect8"	1569.12	75.23	1
