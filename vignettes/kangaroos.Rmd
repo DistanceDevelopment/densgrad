@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+Some set of introductory comments about the vignette
 
 ## Make package functions available
 
@@ -35,13 +35,11 @@ Data come from three sources:
 
 ```{r}
 real <- read.csv(file="../data/GPSpoints.txt", header=TRUE, sep="\t")
-# rand <- read.csv(file="../data/Randpoints.txt", header=TRUE, sep="\t")
 ```
 
 Make some adjustments to field names
 
 ```{r}
-# names(rand) <- c("infid","nearfid","dist","reserve","veg")
 names(real) <- c("infid","nearfid","dist","reserve","veg","animal")
 ```
 
@@ -58,6 +56,7 @@ Transect 23 had no kangaroo detections, hence in the data the perpendicular dist
 
 ```{r}
 survey.truncation <- 150
+gradient.max.distance <- 100
 survey.data <- survey$Distance[!is.na(survey$Distance) & survey$Distance<survey.truncation]
 ```
 
@@ -69,7 +68,7 @@ Apparently this optimisation is not really necessary, but perhaps used for plott
 gradient <- optim(par=c(35,1.2),
                   fn=likdensity,
                   distances=real$dist,
-                  truncation=100,
+                  truncation=gradient.max.distance,
                   control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
 if (gradient$convergence == 0) {
   sigma.est <- gradient$par[1]
@@ -83,10 +82,10 @@ if (gradient$convergence == 0) {
 Let's see a plot of the fitted animal distribution with respect to transects
 
 ```{r, fig.cap="Fitted animal density gradient"}
-xs <- seq(from=0, to=100)
+xs <- seq(from=0, to=gradient.max.distance)
 par(mfrow=c(1,1),mar=c(4,4,0.5,0.5))
 hist(real$dist,prob=T,main="",xlab="Distance (m)")
-lines(xs,pi.x(xs,sigma.est,beta.est,100),type="l",lty=2,lwd=2)
+lines(xs,pi.x(xs,sigma.est,beta.est,gradient.max.distance),type="l",lty=2,lwd=2)
 ```
 
 ##  Joint likelihood estimation
@@ -99,7 +98,7 @@ hn.det <- optim(par=c(50,35,35),
                 detectdists=survey.data,
                 gpsdists=real$dist,
                 truncdet=survey.truncation,
-                truncden=100,
+                truncden=gradient.max.distance,
                 control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
 if (hn.det$convergence == 0) {
   sigma.detect.est <- hn.det$par[1]
@@ -119,7 +118,7 @@ hz.det <- optim(par=c(50,1.2,35,35),
                 detectdists=survey.data,
                 gpsdists=real$dist,
                 truncdet=survey.truncation,
-                truncden=100,
+                truncden=gradient.max.distance,
                 control=list(fnscale=-1))#,method="L-BFGS-B",lower=c(20,-100),upper=c(200,100))
 if (hz.det$convergence == 0) {
   sigma.detect.est <- hz.det$par[1]
@@ -132,13 +131,15 @@ if (hz.det$convergence == 0) {
 } 
 ```
 
+The joint likelihood for the half normal detection model is `r round(likelihood.hn,1)` while the corresponding value for the hazard rate detection model is `r round(likelihood.hz,1)`.
+
 ## Plots of estimated hazard rate detection function
 
 ```{r, fig.cap="Fitted hazard rate detection function accounting for non-uniform distribution."}
-hist(survey$Distance[survey$Distance<150],
+hist(survey$Distance[survey$Distance<survey.truncation],
      main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
-xs <- seq(from=0, to=150)
-lines(xs,60*detfn(z=xs,pars=hz.det$par[1:2],key="HR",adjn=0,w=150),
+xs <- seq(from=0, to=survey.truncation)
+lines(xs,60*detfn(z=xs,pars=hz.det$par[1:2],key="HR",adjn=0,w=survey.truncation),
       ylab="g(y)",lwd=2,type="l",lty=3)
 axis(2,at=seq(0,60,length=5),labels=seq(0,1,length=5))
 ```
