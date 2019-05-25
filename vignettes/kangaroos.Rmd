@@ -105,6 +105,7 @@ if (hn.det$convergence == 0) {
   sigma.gradient.est <- hn.det$par[2]
   beta.est <- hn.det$par[3]
   likelihood.hn <- hn.det$value
+  aic.hn <- -2 * likelihood.hn + 2 * length(hn.det$par)
 } else {
   print("Convergence not achieved, no parameter estimates produced")
 } 
@@ -126,20 +127,33 @@ if (hz.det$convergence == 0) {
   sigma.gradient.est <- hz.det$par[3]
   beta.gradient.est <- hz.det$par[4]
   likelihood.hz <- hz.det$value
+  aic.hz <- -2 * likelihood.hz + 2 * length(hz.det$par)
 } else {
   print("Convergence not achieved, no parameter estimates produced")
 } 
 ```
 
-The joint likelihood for the half normal detection model is `r round(likelihood.hn,1)` while the corresponding value for the hazard rate detection model is `r round(likelihood.hz,1)`.
+The AIC for the half normal detection model is `r format(-2*likelihood.hn+6,nsmall=1,sci=FALSE)` while the corresponding value for the hazard rate detection model is `r format(-2*likelihood.hz+8,nsmall=1,sci=FALSE)`.
 
-## Plots of estimated hazard rate detection function
+Estimted parameters from both models:
 
-```{r, fig.cap="Fitted hazard rate detection function accounting for non-uniform distribution."}
+```{r}
+hn.estimates <- t(c(aic.hn, sigma.detect.est, NA, sigma.gradient.est, beta.est))
+hz.estimates <- t(c(aic.hz, hz.det$par))
+param.table <- as.data.frame(rbind(hn.estimates, hz.estimates))
+rownames(param.table) <- c("Half normal", "Hazard rate")
+colnames(param.table) <- c("AIC","$\\widehat{\\sigma_D}$","$\\widehat{\\beta_D}$",
+                           "$\\widehat{\\sigma_G}$","$\\widehat{\\beta_G}$")
+knitr::kable(param.table, digits=2, caption="Parameter estimates for two joint models.")
+```
+
+## Plot of selected detection function
+
+```{r, fig.cap="Fitted half normal detection function accounting for non-uniform distribution."}
 hist(survey$Distance[survey$Distance<survey.truncation],
      main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
 xs <- seq(from=0, to=survey.truncation)
-lines(xs,60*detfn(z=xs,pars=hz.det$par[1:2],key="HR",adjn=0,w=survey.truncation),
+lines(xs,60*detfn(z=xs,pars=hn.det$par[1],key="HN",adjn=0,w=survey.truncation),
       ylab="g(y)",lwd=2,type="l",lty=3)
 axis(2,at=seq(0,60,length=5),labels=seq(0,1,length=5))
 ```
