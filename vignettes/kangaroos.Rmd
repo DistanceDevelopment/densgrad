@@ -52,7 +52,7 @@ survey <- read.csv(file="../data/nonstratified_farrar.txt", header=TRUE, sep="\t
 
 ### Data munging
 
-Transect 23 had no kangaroo detections, hence in the data the perpendicular distance is recorded as `NA`.  That record needs to be removed from the data set.  Similarly, the truncation distance is set here and the survey data edited accordingly.
+Transect 23 had no kangaroo detections, hence in the data the perpendicular distance is recorded as `NA`.  That record provides no information about the detection function and needs to be removed for purposes of parameter estimation (note the effort associated with transects without detections does need to be retained).  Similarly, the truncation distance is set here and the survey data edited accordingly.
 
 ```{r}
 survey.truncation <- 150
@@ -138,12 +138,12 @@ The AIC for the half normal detection model is `r format(-2*likelihood.hn+6,nsma
 Estimted parameters from both models:
 
 ```{r}
-hn.estimates <- t(c(aic.hn, sigma.detect.est, NA, sigma.gradient.est, beta.est))
+hn.estimates <- t(c(aic.hn, hn.det$par[1], NA, hn.det$par[2:3]))
 hz.estimates <- t(c(aic.hz, hz.det$par))
 param.table <- as.data.frame(rbind(hn.estimates, hz.estimates))
 rownames(param.table) <- c("Half normal", "Hazard rate")
 colnames(param.table) <- c("AIC","$\\widehat{\\sigma_D}$","$\\widehat{\\beta_D}$",
-                           "$\\widehat{\\sigma_G}$","$\\widehat{\\beta_G}$")
+                           "$\\widehat{\\tau_G}$","$\\widehat{\\beta_G}$")
 knitr::kable(param.table, digits=2, caption="Parameter estimates for two joint models.")
 ```
 
@@ -157,3 +157,106 @@ lines(xs,60*detfn(z=xs,pars=hn.det$par[1],key="HN",adjn=0,w=survey.truncation),
       ylab="g(y)",lwd=2,type="l",lty=3)
 axis(2,at=seq(0,60,length=5),labels=seq(0,1,length=5))
 ```
+
+### Probability of detection in covered region
+
+Integration of the selected detection function over all perpendicular distances gives an estimate of detection probability ($\hat{P}$) used to adjust number of detections to account for imperfect detectability.
+
+```{r}
+estimate.Phat <- function(key, params, survey.truncation) {
+  if (key == "HN") {
+    Phat <- integrate(fx.denom,0,survey.truncation,
+                      sigma1=params[1],sigma2=params[2],beta=params[3],w=survey.truncation)$value
+  } else {
+    Phat <- integrate(fx.denomHR,0,survey.truncation,
+                      sigma1=params[1],b=params[2],sigma2=params[3],beta=params[4],w=survey.truncation)$value
+
+  }
+  return(Phat)
+}
+Phat <- estimate.Phat("HN", hn.det$par, survey.truncation)
+```
+
+## Density estimate of individuals
+
+To estimate density in the covered region, the classic formula is applied, 
+$$
+\hat{D} = \frac{n \cdot E[s]}{2wL\hat{P}}
+$$
+
+using probability of detection derived from the best function that incorporates a density gradient.
+
+In addition, two statistics from the survey are required:
+
+- number of detections (n)
+- total survey effort (L)
+- average group size (E[s]) (size bias adjustment could be incorporated)
+
+with truncation distance (w) earlier specified by the user.  Note the argument to the function below is the survey data frame, including transects on which no detections were made.  This is necessary such that effort (L) is calculated correctly.
+
+```{r}
+survey.design.summary <- function(survey, survey.truncation) {
+  num.detects <- sum(!is.na(survey$Distance) & survey$Distance<survey.truncation)
+  total.effort <- sum(aggregate(Length~Transect, survey, min)$Length)
+  average.group.size <- mean(survey$group[survey$Distance<survey.truncation], na.rm=TRUE)
+  return(list(n=num.detects, L=total.effort, Es=average.group.size))
+}
+survey.design <- survey.design.summary(survey, survey.truncation)
+n <- survey.design$n
+L <- survey.design$L
+Es <- survey.design$Es
+```
+
+
+Perpendicular distances as well as survey effort were recorded in meters.  However, the density estimate in the original paper was reported as numbers ha^-2^.  The conversion factor of 10000 converts density from m^-2^ to ha^-2^.  Estimated density is then
+
+```{r}
+Dhat <- (n * Es)/(2*survey.truncation*L*Phat)*10000
+```
+
+
+## Size bias adjustment to group size
+
+```{r}
+size.bias <- function(key, survey.data, survey, grad.data=real$dist, survey.truncation,
+                      gradient.max.distance, plotit=FALSE) {
+  if (key=="HN") {
+    g.of.x <- optim(par=c(50,35,35),fn=full.lik.fx.HN,
+                    detectdists=survey.data,gpsdists=grad.data,
+                    truncdet=survey.truncation,truncden=gradient.max.distance,
+                    control=list(fnscale=-1))
+    gxs <- detfn(z=survey$Distance[survey$Distance<survey.truncation],
+                 pars=g.of.x$par[1],key="HN",adjn=0,w=survey.truncation)
+  } else {
+    g.of.x <- optim(par=c(50,1.2,35,35),fn=full.lik.fx.HR,
+                    detectdists=survey.data,gpsdists=grad.data,
+                    truncdet=survey.truncation,truncden=gradient.max.distance,
+                    control=list(fnscale=-1))
+    gxs <- detfn(z=survey$Distance[survey$Distance<survey.truncation],
+                 pars=g.of.x$par[1:2],key="HR",adjn=0,w=survey.truncation)   
+  }
+  group.size <- survey$group[survey$Distance<survey.truncation]
+  regr.sizeongx <- lm(group.size~gxs)
+  if(plotit) {
+    plot(gxs,group.size)
+    abline(lm(group.size~gxs))
+  }
+  adj.Es <- predict(regr.sizeongx, newdata=list(gxs=1))
+  return(adj.Es)
+}
+Esadj <- size.bias("HN", survey.data, survey, real$dist, survey.truncation, gradient.max.distance)
+Dadj <- (n * Esadj)/(2*survey.truncation*L*Phat)*10000
+```
+
+
+# Point estimate
+
+```{r}
+out.table <- data.frame(n=n, Es=Es, Esadj=Esadj, w=survey.truncation, L=L, 
+                        P=Phat, D=Dhat, Dadj=Dadj)
+knitr::kable(out.table, caption="Summary statistics and estimate of density from selected model", 
+             digits = 3)
+```
+
+
+## Variance
