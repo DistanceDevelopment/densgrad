@@ -262,6 +262,6 @@ knitr::kable(out.table, caption="Summary statistics and estimate of density from
 ## Variance
 
 ```{r}
-bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 499)
+bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 250)
 knitr::kable(data.frame(LCI=signif(unname(bounds[1]),4), UCI=signif(unname(bounds[2]),4)))
 ```

@@ -17,7 +17,7 @@
 #'    might it be wise to send back the entire set of simulation results (par.estimates)?
 #'
 varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=100,
-                         Nboot, alpha=0.05, plotit=TRUE, conversion=100000) {
+                         Nboot, alpha=0.05, plotit=TRUE, conversion=10000) {
   library(MIfuns)
   set.seed(123)
   surv.resamp <- resample.data.frame(survey,names=1:Nboot,key="Transect",rekey=TRUE)
