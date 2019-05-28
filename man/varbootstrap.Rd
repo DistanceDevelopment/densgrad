@@ -5,7 +5,8 @@
 \title{Variance estimation via bootstrap over transects}
 \usage{
 varbootstrap(keyfn, survey, gpsdata, disttrunc = 150,
-  gradientmaxdist = 100, Nboot)
+  gradientmaxdist = 100, Nboot, alpha = 0.05, plotit = TRUE,
+  conversion = 10000)
 }
 \arguments{
 \item{keyfn}{key function of detection function (HN or HR)}
@@ -19,6 +20,12 @@ varbootstrap(keyfn, survey, gpsdata, disttrunc = 150,
 \item{gradientmaxdist}{maximum distance from transect of telemetry data}
 
 \item{Nboot}{number of bootstrap replicates}
+
+\item{alpha}{Type I error rate for computing CI bounds}
+
+\item{plotit}{logical indicating whether to produce histogram of bootstrap estimates}
+
+\item{conversion}{conversion factor to get density units reported}
 }
 \value{
 upper and lower confidence interval bounds on individual density estimates
