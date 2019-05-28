@@ -8,14 +8,16 @@
 #' @param Nboot number of bootstrap replicates
 #' @param alpha Type I error rate for computing CI bounds
 #' @param plotit logical indicating whether to produce histogram of bootstrap estimates
+#' @param conversion conversion factor to get density units reported
 #'
 #' @return upper and lower confidence interval bounds on individual density estimates
 #'
 #' @section To Do
-#'    incorporate alpha into computations
+#'    incorporate alpha into computations (done)
 #'    might it be wise to send back the entire set of simulation results (par.estimates)?
 #'
-varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=100, Nboot, alpha=0.05, plotit=TRUE) {
+varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=100,
+                         Nboot, alpha=0.05, plotit=TRUE, conversion=100000) {
   library(MIfuns)
   set.seed(123)
   surv.resamp <- resample.data.frame(survey,names=1:Nboot,key="Transect",rekey=TRUE)
@@ -55,17 +57,16 @@ varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=
       par.estimates$P[i] <- integrate(fx.denomHR,0,disttrunc,sigma1=mle3.b$par[1],
                                    b=mle3.b$par[2],sigma2=mle3.b$par[3],beta=mle3.b$par[4],w=disttrunc)$value
     }
-    par.estimates$D[i] <- 10000 * par.estimates$n[i]*par.estimates$EsSb[i]/
+    par.estimates$D[i] <- conversion * par.estimates$n[i]*par.estimates$EsSb[i]/
                                   (2*par.estimates$L[i]*disttrunc*par.estimates$P[i])
-    if (i/10==round(i/10)) print(i)
   }
-#  par.estimates$D <- 10000 * par.estimates$n*par.estimates$ECsSb2/
-#                             (2*par.estimates$L*disttrunc*par.estimates$P)
-  CIbounds <- quantile(par.estimates$D, probs = c(0.025, 0.975))
+  alphaover2 <- alpha/2
+  CIlimits <- c(alphaover2, 1-alphaover2)
+  CIbounds <- quantile(par.estimates$D, probs = CIlimits)
   if(plotit) {
-    hist(par.estimates$D, main="Distribution of bootstrap density estimates",
-         xlab="Estimated density (numbers per hectare)")
-    abline(v=CIbounds, lwd=3, lty=2)
+    hist(par.estimates$D, main="Bootstrap density estimates",
+         xlab="Estimated density", sub=paste("Successes",sum(!is.na(par.estimates$D))))
+    abline(v=CIbounds, lwd=2, lty=2)
   }
   return(CIbounds)
 }
