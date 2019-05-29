@@ -44,6 +44,6 @@ CDS.HN.fx <- function(x, sigma1, w) {
 #'
 CDS.HN.lik <- function(par, distances, truncation) {
   sigma1 <- par[1]
-  likHN <- sum(log(CDS.HN.fx(x1, sigma1 = distances, truncation)))
+  likHN <- sum(log(CDS.HN.fx(distances, sigma1 = sigma1, truncation)))
   return(likHN)
 }
