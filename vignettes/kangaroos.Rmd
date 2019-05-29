@@ -195,12 +195,6 @@ In addition, two statistics from the survey are required:
 with truncation distance (w) earlier specified by the user.  Note the argument to the function below is the survey data frame, including transects on which no detections were made.  This is necessary such that effort (L) is calculated correctly.
 
 ```{r}
-survey.design.summary <- function(survey, survey.truncation) {
-  num.detects <- sum(!is.na(survey$Distance) & survey$Distance<survey.truncation)
-  total.effort <- sum(aggregate(Length~Transect, survey, min)$Length)
-  average.group.size <- mean(survey$group[survey$Distance<survey.truncation], na.rm=TRUE)
-  return(list(n=num.detects, L=total.effort, Es=average.group.size))
-}
 survey.design <- survey.design.summary(survey, survey.truncation)
 n <- survey.design$n
 L <- survey.design$L
