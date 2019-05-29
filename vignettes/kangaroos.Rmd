@@ -218,32 +218,6 @@ Dhat <- (n * Es)/(2*survey.truncation*L*Phat)*10000
 ## Size bias adjustment to group size
 
 ```{r}
-size.bias <- function(key, survey.data, survey, grad.data=real$dist, survey.truncation,
-                      gradient.max.distance, plotit=FALSE) {
-  if (key=="HN") {
-    g.of.x <- optim(par=c(50,35,35),fn=full.lik.fx.HN,
-                    detectdists=survey.data,gpsdists=grad.data,
-                    truncdet=survey.truncation,truncden=gradient.max.distance,
-                    control=list(fnscale=-1))
-    gxs <- detfn(z=survey$Distance[survey$Distance<survey.truncation],
-                 pars=g.of.x$par[1],key="HN",adjn=0,w=survey.truncation)
-  } else {
-    g.of.x <- optim(par=c(50,1.2,35,35),fn=full.lik.fx.HR,
-                    detectdists=survey.data,gpsdists=grad.data,
-                    truncdet=survey.truncation,truncden=gradient.max.distance,
-                    control=list(fnscale=-1))
-    gxs <- detfn(z=survey$Distance[survey$Distance<survey.truncation],
-                 pars=g.of.x$par[1:2],key="HR",adjn=0,w=survey.truncation)   
-  }
-  group.size <- survey$group[survey$Distance<survey.truncation]
-  regr.sizeongx <- lm(group.size~gxs)
-  if(plotit) {
-    plot(gxs,group.size)
-    abline(lm(group.size~gxs))
-  }
-  adj.Es <- predict(regr.sizeongx, newdata=list(gxs=1))
-  return(adj.Es)
-}
 Esadj <- size.bias("HN", survey.data, survey, real$dist, survey.truncation, gradient.max.distance)
 Dadj <- (n * Esadj)/(2*survey.truncation*L*Phat)*10000
 ```
@@ -262,6 +236,7 @@ knitr::kable(out.table, caption="Summary statistics and estimate of density from
 ## Variance
 
 ```{r}
-bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 250)
+bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
+                       Nboot=100, plotit=TRUE, alpha=0.05)
 knitr::kable(data.frame(LCI=signif(unname(bounds[1]),4), UCI=signif(unname(bounds[2]),4)))
 ```

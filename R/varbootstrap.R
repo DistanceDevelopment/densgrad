@@ -54,8 +54,8 @@ varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=
       par.estimates$P[i] <- integrate(fx.denom,0,disttrunc,sigma1=mle2.b$par[1],
                                    sigma2=mle2.b$par[2],beta=mle2.b$par[3],w=disttrunc)$value
     } else {
-      par.estimates$P[i] <- integrate(fx.denomHR,0,disttrunc,sigma1=mle3.b$par[1],
-                                   b=mle3.b$par[2],sigma2=mle3.b$par[3],beta=mle3.b$par[4],w=disttrunc)$value
+      par.estimates$P[i] <- integrate(fx.denomHR,0,disttrunc,sigma1=mle2.b$par[1],
+                                   b=mle2.b$par[2],sigma2=mle2.b$par[3],beta=mle2.b$par[4],w=disttrunc)$value
     }
     par.estimates$D[i] <- conversion * par.estimates$n[i]*par.estimates$EsSb[i]/
                                   (2*par.estimates$L[i]*disttrunc*par.estimates$P[i])
