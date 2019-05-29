@@ -16,6 +16,7 @@ License: GPL
 Encoding: UTF-8
 LazyData: true
 Suggests:
+    MIfuns,
     knitr,
     rmarkdown
 VignetteBuilder: knitr

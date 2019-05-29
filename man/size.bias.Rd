@@ -4,8 +4,8 @@
 \alias{size.bias}
 \title{Compute size-bias adjusted group size estimates}
 \usage{
-size.bias(key, survey.data, survey, grad.data = real$dist,
-  survey.truncation, gradient.max.distance, plotit = FALSE)
+size.bias(key, survey.data, survey, grad.data, survey.truncation,
+  gradient.max.distance, plotit = FALSE)
 }
 \arguments{
 \item{key}{key function (HN or HR)}

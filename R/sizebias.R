@@ -10,7 +10,7 @@
 #'
 #' @return adjusted group size
 #'
-size.bias <- function(key, survey.data, survey, grad.data=real$dist, survey.truncation,
+size.bias <- function(key, survey.data, survey, grad.data, survey.truncation,
                       gradient.max.distance, plotit=FALSE) {
   if (key=="HN") {
     g.of.x <- optim(par=c(50,35,35),fn=full.lik.fx.HN,
