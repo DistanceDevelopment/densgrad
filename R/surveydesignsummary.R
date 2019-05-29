@@ -2,7 +2,7 @@
 #' Extract information about a distance sampling survey from survey data frame
 #'
 #' @param survey data frame containing 'usual' distance sampling data
-#' @param survey.truncation
+#' @param survey.truncation truncation distance for detection function fitting
 #'
 #' @return named list containing number of detections, survey effort and average group size
 #'

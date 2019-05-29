@@ -9,7 +9,7 @@ survey.design.summary(survey, survey.truncation)
 \arguments{
 \item{survey}{data frame containing 'usual' distance sampling data}
 
-\item{survey.truncation}{}
+\item{survey.truncation}{truncation distance for detection function fitting}
 }
 \value{
 named list containing number of detections, survey effort and average group size
