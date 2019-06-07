@@ -232,5 +232,14 @@ knitr::kable(out.table, caption="Summary statistics and estimate of density from
 ```{r}
 bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
                        Nboot=100, plotit=TRUE, alpha=0.05)
-knitr::kable(data.frame(LCI=signif(unname(bounds[1]),4), UCI=signif(unname(bounds[2]),4)))
+knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), UCI=signif(unname(bounds$CIbounds[2]),4)))
+```
+
+Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\hat{\sigma_d}, \hat{b}, \hat{\sigma_x}, \hat{\beta}$ as well as the derived parameters $\hat{P}$ and $\hat{D}.
+
+```{r}
+hist(bounds$par.estimates$sigma1, main=expression(widehat(sigma[d])), xlab="Estimated value")
+hist(bounds$par.estimates$sigma2, main=expression(widehat(sigma[g])), xlab="Estimated value")
+hist(bounds$par.estimates$beta, main=expression(widehat(beta)), xlab="Estimated value")
+hist(bounds$par.estimates$P, main=expression(widehat(P)), xlab="Estimated value")
 ```
