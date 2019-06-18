@@ -12,10 +12,6 @@
 #'
 #' @return parameter estimates of all replicates and upper and lower confidence interval bounds on individual density estimates
 #'
-#' @section To Do
-#'    incorporate alpha into computations (done)
-#'    might it be wise to send back the entire set of simulation results (par.estimates) (done)
-#'
 varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=100,
                          Nboot, alpha=0.05, plotit=TRUE, conversion=10000) {
 #  library(MIfuns)
