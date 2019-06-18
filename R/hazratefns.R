@@ -7,7 +7,6 @@
 #' @param b scale parameter of hazard rate
 #'
 #' @return component of likelihood
-#' @export
 #'
 CDS.HR.fx.denom <- function(x, sigma1, b) {
   denom <- detfn(x, pars = c(sigma1, b), key = "HR", adjn = 0)
@@ -23,7 +22,6 @@ CDS.HR.fx.denom <- function(x, sigma1, b) {
 #' @param w truncation distance
 #'
 #' @return component of likelihood
-#' @export
 #'
 CDS.HR.fx <- function(x, sigma1, b, w) {
   CDS.HR.fx.denK <- integrate(CDS.HR.fx.denom, lower = 0, upper = w, sigma1 = sigma1, b = b)
@@ -38,7 +36,6 @@ CDS.HR.fx <- function(x, sigma1, b, w) {
 #' @param truncation truncation distance
 #'
 #' @return evaluated likelihood for HR CDS
-#' @export
 #'
 CDS.HR.lik <- function(par, distances, truncation) {
   sigma1 <- par[1]

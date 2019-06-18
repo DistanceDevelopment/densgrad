@@ -28,7 +28,7 @@ varbootstrap(keyfn, survey, gpsdata, disttrunc = 150,
 \item{conversion}{conversion factor to get density units reported}
 }
 \value{
-upper and lower confidence interval bounds on individual density estimates
+parameter estimates of all replicates and upper and lower confidence interval bounds on individual density estimates
 }
 \description{
 Variance estimation via bootstrap over transects

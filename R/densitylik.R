@@ -7,7 +7,6 @@
 #' @param beta a multiplicative constant, helping to improve the fit notice that if beta>0, animals avoid linear structure, if beta<0, they prefer it
 #'
 #' @return component of likelihood
-#' @export
 #'
 pi.x.den <- function(x, sigma, beta) {
   denom <- (1 - beta * dnorm(x, mean=0, sd=sigma))

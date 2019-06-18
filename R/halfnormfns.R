@@ -6,7 +6,6 @@
 #' @param sigma1 half normal parameter
 #'
 #' @return vector of detection probabilities
-#' @export
 #'
 CDS.HN.fx.denom = function(x, sigma1) {
   denom <- detfn(x, pars = sigma1, key = "HN", adjn = 0)
@@ -22,7 +21,6 @@ CDS.HN.fx.denom = function(x, sigma1) {
 #' @param w trunction
 #'
 #' @return component of likelihood
-#' @export
 #'
 CDS.HN.fx <- function(x, sigma1, w) {
   CDS.HN.fx.denK <- integrate(CDS.HN.fx.denom, lower = 0, upper = w, sigma1 = sigma1)
@@ -40,7 +38,6 @@ CDS.HN.fx <- function(x, sigma1, w) {
 #' @param truncation truncation distance
 #'
 #' @return evaluated likelihood for HN CDS
-#' @export
 #'
 CDS.HN.lik <- function(par, distances, truncation) {
   sigma1 <- par[1]

@@ -1,70 +1,27 @@
----
-title: "Kangaroo distance sampling survey along roads"
-author: "Marques and Rexstad"
-date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
-vignette: >
-  %\VignetteIndexEntry{Kangaroo distance sampling survey along roads}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-```{r setup, include = FALSE}
+## ----setup, include = FALSE----------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
 
-Some set of introductory comments about the vignette
-
-## Make package functions available
-
-```{r}
+## ------------------------------------------------------------------------
 library(densgrad)
-```
 
-## Acquire data
-
-Data come from three sources:  
-
-- distance sampling survey (transect lengths, perpendicular distances and group size)
-- random locations within truncation distance of the transects (road)
-    - actually, random data don't appear to be part of the actual analysis
-- GPS collar data from telemetered kangaroos within truncation distance of transects
-
-```{r}
+## ------------------------------------------------------------------------
 real <- read.csv(file="../data/GPSpoints.txt", header=TRUE, sep="\t")
-```
 
-Make some adjustments to field names
-
-```{r}
+## ------------------------------------------------------------------------
 names(real) <- c("infid","nearfid","dist","reserve","veg","animal")
-```
 
-Actual distance sampling survey data
-
-```{r}
+## ------------------------------------------------------------------------
 survey <- read.csv(file="../data/nonstratified_farrar.txt", header=TRUE, sep="\t")
-```
 
-
-### Data munging
-
-Transect 23 had no kangaroo detections, hence in the data the perpendicular distance is recorded as `NA`.  That record provides no information about the detection function and needs to be removed for purposes of parameter estimation (note the effort associated with transects without detections does need to be retained).  Similarly, the truncation distance is set here and the survey data edited accordingly.
-
-```{r}
+## ------------------------------------------------------------------------
 survey.truncation <- 150
 gradient.max.distance <- 100
 survey.data <- survey$Distance[!is.na(survey$Distance) & survey$Distance<survey.truncation]
-```
 
-## Density gradient estimation
-
-Apparently this optimisation is not really necessary, but perhaps used for plotting?
-
-```{r}
+## ------------------------------------------------------------------------
 gradient <- optim(par=c(35,1.2),
                   fn=likdensity,
                   distances=real$dist,
@@ -77,22 +34,14 @@ if (gradient$convergence == 0) {
 } else {
   print("Convergence not achieved, no parameter estimates produced")
 } 
-```
 
-Let's see a plot of the fitted animal distribution with respect to transects
-
-```{r, fig.cap="Fitted animal density gradient", fig.height=3}
+## ---- fig.cap="Fitted animal density gradient", fig.height=3-------------
 xs <- seq(from=0, to=gradient.max.distance)
 par(mfrow=c(1,1),mar=c(4,4,0.5,0.5))
 hist(real$dist,prob=T,main="",xlab="Distance (m)")
 lines(xs,pi.x(xs,sigma.est,beta.est,gradient.max.distance),type="l",lty=2,lwd=2)
-```
 
-##  Joint likelihood estimation
-
-First the half normal detection function
-
-```{r}
+## ------------------------------------------------------------------------
 hn.det <- optim(par=c(50,35,35),
                 fn=full.lik.fx.HN,
                 detectdists=survey.data,
@@ -109,11 +58,8 @@ if (hn.det$convergence == 0) {
 } else {
   print("Convergence not achieved, no parameter estimates produced")
 } 
-```
 
-Next the hazard rate detection function
-
-```{r}
+## ------------------------------------------------------------------------
 hz.det <- optim(par=c(50,1.2,35,35),
                 fn=full.lik.fx.HR,
                 detectdists=survey.data,
@@ -131,13 +77,8 @@ if (hz.det$convergence == 0) {
 } else {
   print("Convergence not achieved, no parameter estimates produced")
 } 
-```
 
-The AIC for the half normal detection model is `r format(-2*likelihood.hn+6,nsmall=1,sci=FALSE)` while the corresponding value for the hazard rate detection model is `r format(-2*likelihood.hz+8,nsmall=1,sci=FALSE)`.
-
-Estimted parameters from both models:
-
-```{r}
+## ------------------------------------------------------------------------
 hn.estimates <- t(c(aic.hn, hn.det$par[1], NA, hn.det$par[2:3]))
 hz.estimates <- t(c(aic.hz, hz.det$par))
 param.table <- as.data.frame(rbind(hn.estimates, hz.estimates))
@@ -145,89 +86,44 @@ rownames(param.table) <- c("Half normal", "Hazard rate")
 colnames(param.table) <- c("AIC","$\\widehat{\\sigma_D}$","$\\widehat{\\beta_D}$",
                            "$\\widehat{\\tau_G}$","$\\widehat{\\beta_G}$")
 knitr::kable(param.table, digits=2, caption="Parameter estimates for two joint models.")
-```
 
-## Plot of selected detection function
-
-```{r, fig.cap="Fitted half normal detection function accounting for non-uniform distribution.", fig.height=3}
+## ---- fig.cap="Fitted half normal detection function accounting for non-uniform distribution.", fig.height=3----
 hist(survey$Distance[survey$Distance<survey.truncation],
      main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
 xs <- seq(from=0, to=survey.truncation)
 lines(xs,60*detfn(z=xs,pars=hn.det$par[1],key="HN",adjn=0,w=survey.truncation),
       ylab="g(y)",lwd=2,type="l",lty=3)
 axis(2,at=seq(0,60,length=5),labels=seq(0,1,length=5))
-```
 
-### Probability of detection in covered region
-
-Integration of the selected detection function over all perpendicular distances gives an estimate of detection probability ($\hat{P}$) used to adjust number of detections to account for imperfect detectability.
-
-```{r}
+## ------------------------------------------------------------------------
 Phat <- estimate.Phat("HN", hn.det$par, survey.truncation)
-```
 
-## Density estimate of individuals
-
-To estimate density in the covered region, the classic formula is applied, 
-$$
-\hat{D} = \frac{n \cdot E[s]}{2wL\hat{P}}
-$$
-
-using probability of detection derived from the best function that incorporates a density gradient.
-
-In addition, three statistics from the survey are required:
-
-- number of detections (n)
-- total survey effort (L)
-- average group size (E[s]) (size bias adjustment could be incorporated)
-
-with truncation distance (w) earlier specified by the user.  Note the argument to the function below is the survey data frame, including transects on which no detections were made.  This is necessary such that effort (L) is calculated correctly.
-
-```{r}
+## ------------------------------------------------------------------------
 survey.design <- survey.design.summary(survey, survey.truncation)
 n <- survey.design$n
 L <- survey.design$L
 Es <- survey.design$Es
-```
 
-
-Perpendicular distances as well as survey effort were recorded in meters.  However, the density estimate in the original paper was reported as numbers ha^-2^.  The conversion factor of 10000 converts density from m^-2^ to ha^-2^.  Estimated density is then
-
-```{r}
+## ------------------------------------------------------------------------
 Dhat <- (n * Es)/(2*survey.truncation*L*Phat)*10000
-```
 
-
-## Size bias adjustment to group size
-
-```{r}
+## ------------------------------------------------------------------------
 Esadj <- size.bias("HN", survey.data, survey, real$dist, survey.truncation, gradient.max.distance)
 Dadj <- (n * Esadj)/(2*survey.truncation*L*Phat)*10000
-```
 
-
-# Point estimate
-
-```{r}
+## ------------------------------------------------------------------------
 out.table <- data.frame(n=n, Es=Es, Esadj=Esadj, w=survey.truncation, L=L, 
                         P=Phat, D=Dhat, Dadj=Dadj)
 colnames(out.table) <- c("n","E(s)","$E(s)_{sb}$","w","L","$\\hat{P}$","$\\hat{D}$","$\\hat{D_{sb}}$")
 knitr::kable(out.table, caption="Summary statistics and estimate of density from selected model", 
              digits = 3)
-```
 
-
-# Variance estimates
-
-```{r, warning=FALSE, fig.height=3}
+## ---- warning=FALSE, fig.height=3----------------------------------------
 bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
-                       Nboot=249, plotit=TRUE, alpha=0.05)
+                       Nboot=999, plotit=TRUE, alpha=0.05)
 knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), UCI=signif(unname(bounds$CIbounds[2]),4)))
-```
 
-Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\hat{\sigma_d}, \hat{b}, \hat{\sigma_x}, \hat{\beta}$ as well as the derived parameters $\hat{P}$ and $\hat{D}$.
-
-```{r}
+## ------------------------------------------------------------------------
 alpha <- 0.05
 alphaover2 <- alpha/2
 CIlimits <- c(alphaover2, 1-alphaover2)
@@ -240,4 +136,4 @@ hist(bounds$par.estimates$beta, main=expression(widehat(beta)), xlab="Estimated 
 abline(v=quantile(bounds$par.estimates$beta, probs = CIlimits), lwd=2, lty=3)
 hist(bounds$par.estimates$P, main=expression(widehat(P)), xlab="Estimated value")
 abline(v=quantile(bounds$par.estimates$P, probs = CIlimits), lwd=2, lty=3)
-```
+

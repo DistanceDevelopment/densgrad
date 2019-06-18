@@ -9,7 +9,6 @@
 #' @param w truncation distance
 #'
 #' @return component of likelihood
-#' @export
 #'
 fx.denom <- function(x,sigma1,sigma2,beta,w){
   denom <- detfn(x,pars=sigma1,key="HN",adjn=0,w=w)*pi.x(x,sigma=sigma2,beta=beta,w=w)

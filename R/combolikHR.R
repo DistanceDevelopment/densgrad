@@ -10,7 +10,6 @@
 #' @param w truncation distance (distance sampling)
 #'
 #' @return component of likelihood
-#' @export
 #'
 fx.denomHR <- function(x,sigma1,b,sigma2,beta,w){
   denom <- detfn(x,pars=c(sigma1,b),key="HR",adjn=0,w=w)*

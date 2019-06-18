@@ -10,7 +10,6 @@
 #' @param w truncation distance, only fundamental for adjustments, by default the max of the distances
 #'
 #' @return probability of detection
-#' @export
 #'
 #'
 detfn <- function(z,

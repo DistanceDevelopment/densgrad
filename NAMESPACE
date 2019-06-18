@@ -1,3 +1,3 @@
 exportPattern("^[[:alpha:]]+")
-  importFrom("stats", "dnorm", "integrate", "optim", "predict", "quantile", "lm")
+  importFrom("stats", "aggregate", "dnorm", "integrate", "optim", "predict", "quantile", "lm")
   importFrom("graphics", "abline", "hist", "plot")
