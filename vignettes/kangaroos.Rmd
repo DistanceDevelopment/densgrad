@@ -1,8 +1,11 @@
 ---
 title: "Kangaroo distance sampling survey along roads"
 author: "Marques and Rexstad"
-date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
+date: "20 June 2019"
+output: 
+  rmarkdown::pdf_document:
+    keep_tex: true
+classoption: a4paper
 vignette: >
   %\VignetteIndexEntry{Kangaroo distance sampling survey along roads}
   %\VignetteEngine{knitr::rmarkdown}
@@ -79,9 +82,9 @@ if (gradient$convergence == 0) {
 } 
 ```
 
-Let's see a plot of the fitted animal distribution with respect to transects
+Let's see a plot of the fitted animal distribution with respect to transects (Fig. \ref{gradfiginside}).
 
-```{r, fig.cap="Fitted animal density gradient", fig.height=3}
+```{r gradfig, fig.cap="Fitted animal density gradient \\label{gradfiginside}", fig.height=3}
 xs <- seq(from=0, to=gradient.max.distance)
 par(mfrow=c(1,1),mar=c(4,4,0.5,0.5))
 hist(real$dist,prob=T,main="",xlab="Distance (m)")
@@ -149,7 +152,9 @@ knitr::kable(param.table, digits=2, caption="Parameter estimates for two joint m
 
 ## Plot of selected detection function
 
-```{r, fig.cap="Fitted half normal detection function accounting for non-uniform distribution.", fig.height=3}
+Given the (slightly) smaller AIC for the half normal detection function, Fig. \ref{HN} shows the fit of the half normal detection function to the observed detection distances.
+
+```{r, fig.cap="Fitted half normal detection function accounting for non-uniform distribution. \\label{HN}", fig.height=3}
 hist(survey$Distance[survey$Distance<survey.truncation],
      main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
 xs <- seq(from=0, to=survey.truncation)
@@ -211,32 +216,37 @@ Dadj <- (n * Esadj)/(2*survey.truncation*L*Phat)*10000
 ```{r}
 out.table <- data.frame(n=n, Es=Es, Esadj=Esadj, w=survey.truncation, L=L, 
                         P=Phat, D=Dhat, Dadj=Dadj)
-colnames(out.table) <- c("n","E(s)","$E(s)_{sb}$","w","L","$\\hat{P}$","$\\hat{D}$","$\\hat{D_{sb}}$")
-knitr::kable(out.table, caption="Summary statistics and estimate of density from selected model", 
+colnames(out.table) <- c("n","E(s)","$E(s)_{sb}$","w","L",
+                         "$\\hat{P}$","$\\hat{D}$","$\\hat{D_{sb}}$")
+knitr::kable(out.table, caption="Summary statistics and estimate of density from selected model.", 
              digits = 3)
 ```
 
+\newpage
 
 # Variance estimates
 
-```{r, warning=FALSE, fig.height=3}
+A bootstrap approach is used for variance estimation and a histogram of the estimated densities is shown in Fig. \ref{bootD}.
+
+```{r, warning=FALSE, fig.height=3, fig.cap="Distribution of bootstrap replicate estimates of density. \\label{bootD}"}
 bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
-                       Nboot=249, plotit=TRUE, alpha=0.05)
-knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), UCI=signif(unname(bounds$CIbounds[2]),4)))
+                       Nboot=49, plotit=TRUE, alpha=0.05)
+knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), 
+                        UCI=signif(unname(bounds$CIbounds[2]),4)))
 ```
 
-Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\hat{\sigma_d}, \hat{b}, \hat{\sigma_x}, \hat{\beta}$ as well as the derived parameters $\hat{P}$ and $\hat{D}$.
+Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\widehat{\sigma_D}$, $\widehat{\beta_D}$ (if HR), $\widehat{\sigma_G}$, $\widehat{\beta_G}$ as well as the derived parameters $\hat{P}$ and $\hat{D}$ (Fig. \ref{others}).
 
-```{r}
+```{r, fig.cap="Distribution of other parameter estimates via the bootstrap. \\label{others}"}
 alpha <- 0.05
 alphaover2 <- alpha/2
 CIlimits <- c(alphaover2, 1-alphaover2)
 par(mfrow=c(2,2))
-hist(bounds$par.estimates$sigma1, main=expression(widehat(sigma[d])), xlab="Estimated value")
+hist(bounds$par.estimates$sigma1, main=expression(widehat(sigma[D])), xlab="Estimated value")
 abline(v=quantile(bounds$par.estimates$sigma1, probs = CIlimits), lwd=2, lty=3)
-hist(bounds$par.estimates$sigma2, main=expression(widehat(sigma[g])), xlab="Estimated value")
+hist(bounds$par.estimates$sigma2, main=expression(widehat(sigma[G])), xlab="Estimated value")
 abline(v=quantile(bounds$par.estimates$sigma2, probs = CIlimits), lwd=2, lty=3)
-hist(bounds$par.estimates$beta, main=expression(widehat(beta)), xlab="Estimated value")
+hist(bounds$par.estimates$beta, main=expression(widehat(beta[G])), xlab="Estimated value")
 abline(v=quantile(bounds$par.estimates$beta, probs = CIlimits), lwd=2, lty=3)
 hist(bounds$par.estimates$P, main=expression(widehat(P)), xlab="Estimated value")
 abline(v=quantile(bounds$par.estimates$P, probs = CIlimits), lwd=2, lty=3)
