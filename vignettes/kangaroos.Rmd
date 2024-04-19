@@ -2,24 +2,15 @@
 title: "Kangaroo distance sampling survey along roads"
 author: "Marques and Rexstad"
 date: "20 June 2019"
-output: 
-  rmarkdown::pdf_document:
-    keep_tex: true
-classoption: a4paper
-vignette: >
-  %\VignetteIndexEntry{Kangaroo distance sampling survey along roads}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output:  
+  bookdown::html_document2:
+    number_sections: false
+    base_format: rmarkdown::html_vignette
+pkgdown:
+  as_is: true
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-Some set of introductory comments about the vignette
+Some introductory comments about the vignette
 
 ## Make package functions available
 
@@ -60,7 +51,8 @@ Transect 23 had no kangaroo detections, hence in the data the perpendicular dist
 ```{r}
 survey.truncation <- 150
 gradient.max.distance <- 100
-survey.data <- survey$Distance[!is.na(survey$Distance) & survey$Distance<survey.truncation]
+survey.data <- survey$Distance[!is.na(survey$Distance) & 
+                                 survey$Distance<survey.truncation]
 ```
 
 ## Density gradient estimation
@@ -82,14 +74,15 @@ if (gradient$convergence == 0) {
 } 
 ```
 
-Let's see a plot of the fitted animal distribution with respect to transects (Fig. \ref{gradfiginside}).
+Let's see a plot of the fitted animal distribution with respect to transects (Fig. \@ref(fig:gradfig)).
 
-```{r gradfig, fig.cap="Fitted animal density gradient \\label{gradfiginside}", fig.height=3}
+```{r label=gradfig, fig.cap="Fitted animal density gradient.", fig.height=3, fig.width=9}
 xs <- seq(from=0, to=gradient.max.distance)
 par(mfrow=c(1,1),mar=c(4,4,0.5,0.5))
-hist(real$dist,prob=T,main="",xlab="Distance (m)")
+hist(real$dist,prob=T,main="",xlab="Distance (m)", nc=20)
 lines(xs,pi.x(xs,sigma.est,beta.est,gradient.max.distance),type="l",lty=2,lwd=2)
 ```
+
 
 ##  Joint likelihood estimation
 
@@ -136,9 +129,9 @@ if (hz.det$convergence == 0) {
 } 
 ```
 
-The AIC for the half normal detection model is `r format(-2*likelihood.hn+6,nsmall=1,sci=FALSE)` while the corresponding value for the hazard rate detection model is `r format(-2*likelihood.hz+8,nsmall=1,sci=FALSE)`.
+The AIC for the half normal detection model is `r format(aic.hn,scientific=FALSE, nsmall=0)` while the corresponding value for the hazard rate detection model is `r format(aic.hz,scientific=FALSE, nsmall=0)`.
 
-Estimted parameters from both models:
+Estimated parameters from both models:
 
 ```{r}
 hn.estimates <- t(c(aic.hn, hn.det$par[1], NA, hn.det$par[2:3]))
@@ -147,15 +140,15 @@ param.table <- as.data.frame(rbind(hn.estimates, hz.estimates))
 rownames(param.table) <- c("Half normal", "Hazard rate")
 colnames(param.table) <- c("AIC","$\\widehat{\\sigma_D}$","$\\widehat{\\beta_D}$",
                            "$\\widehat{\\tau_G}$","$\\widehat{\\beta_G}$")
-knitr::kable(param.table, digits=2, caption="Parameter estimates for two joint models.")
+knitr::kable(param.table, digits=1, caption="Parameter estimates for two joint models.")
 ```
 
 ## Plot of selected detection function
 
-Given the (slightly) smaller AIC for the half normal detection function, Fig. \ref{HN} shows the fit of the half normal detection function to the observed detection distances.
+Given the (marginally) smaller AIC for the half normal detection function, Fig. \@ref(fig:HN) shows the fit of the half normal detection function to the observed detection distances.
 
-```{r, fig.cap="Fitted half normal detection function accounting for non-uniform distribution. \\label{HN}", fig.height=3}
-hist(survey$Distance[survey$Distance<survey.truncation],
+```{r, label=HN, fig.cap="Fitted half normal detection function accounting for non-uniform distribution.", fig.height=4, fig.width=9}
+hist(survey$Distance[survey$Distance<survey.truncation], 
      main="",yaxt="n",ylab="g(y)",xlab="Distance (m)")
 xs <- seq(from=0, to=survey.truncation)
 lines(xs,60*detfn(z=xs,pars=hn.det$par[1],key="HN",adjn=0,w=survey.truncation),
@@ -195,7 +188,6 @@ L <- survey.design$L
 Es <- survey.design$Es
 ```
 
-
 Perpendicular distances as well as survey effort were recorded in meters.  However, the density estimate in the original paper was reported as numbers ha^-2^.  The conversion factor of 10000 converts density from m^-2^ to ha^-2^.  Estimated density is then
 
 ```{r}
@@ -222,22 +214,20 @@ knitr::kable(out.table, caption="Summary statistics and estimate of density from
              digits = 3)
 ```
 
-\newpage
-
 # Variance estimates
 
-A bootstrap approach is used for variance estimation and a histogram of the estimated densities is shown in Fig. \ref{bootD}.
+A bootstrap approach is used for variance estimation and a histogram of the estimated densities is shown in Fig. \@ref(fig:bootD).
 
-```{r, warning=FALSE, fig.height=3, fig.cap="Distribution of bootstrap replicate estimates of density. \\label{bootD}"}
+```{r, label=bootD, warning=FALSE, fig.height=3, fig.width=9, fig.cap="Distribution of bootstrap replicate estimates of density."}
 bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
-                       Nboot=49, plotit=TRUE, alpha=0.05)
+                       Nboot=9, plotit=TRUE, alpha=0.05)
 knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), 
                         UCI=signif(unname(bounds$CIbounds[2]),4)))
 ```
 
-Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\widehat{\sigma_D}$, $\widehat{\beta_D}$ (if HR), $\widehat{\sigma_G}$, $\widehat{\beta_G}$ as well as the derived parameters $\hat{P}$ and $\hat{D}$ (Fig. \ref{others}).
+Because details of each simulation replicate is saved and returned as the first object in the named list, analysts can examine the sampling distribution of all the parameters estimated by the joint likelihood: $\widehat{\sigma_D}$, $\widehat{\beta_D}$ (if HR), $\widehat{\sigma_G}$, $\widehat{\beta_G}$ as well as the derived parameters $\hat{P}$ and $\hat{D}$ (Fig. \@ref(fig:others)).
 
-```{r, fig.cap="Distribution of other parameter estimates via the bootstrap. \\label{others}"}
+```{r, label=others, fig.cap="Distribution of other parameter estimates via the bootstrap.", fig.height=10, fig.width=10}
 alpha <- 0.05
 alphaover2 <- alpha/2
 CIlimits <- c(alphaover2, 1-alphaover2)

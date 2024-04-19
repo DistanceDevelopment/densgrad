@@ -14,10 +14,10 @@
 #'
 varbootstrap <- function(keyfn, survey, gpsdata, disttrunc=150, gradientmaxdist=100,
                          Nboot, alpha=0.05, plotit=TRUE, conversion=10000) {
-#  library(MIfuns)
+#  library(metrumrg)
   set.seed(123)
-  surv.resamp <- MIfuns::resample.data.frame(survey,names=1:Nboot,key="Transect",rekey=TRUE)
-  real.resamp <- MIfuns::resample.data.frame(gpsdata,names=1:Nboot,key="animal",rekey=TRUE)
+  surv.resamp <- metrumrg::resample.data.frame(survey,names=1:Nboot,key="Transect",rekey=TRUE)
+  real.resamp <- metrumrg::resample.data.frame(gpsdata,names=1:Nboot,key="animal",rekey=TRUE)
   par.estimates <- data.frame(ID=1:Nboot,L=NA,n=NA,Es=NA,sigma1=NA,b=NA,sigma2=NA,beta=NA,P=NA,D=NA)
   for (i in 1:Nboot) {
     surv.data.b <- surv.resamp[[i]]
