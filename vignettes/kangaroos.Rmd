@@ -220,7 +220,7 @@ A bootstrap approach is used for variance estimation and a histogram of the esti
 
 ```{r, label=bootD, warning=FALSE, fig.height=3, fig.width=9, fig.cap="Distribution of bootstrap replicate estimates of density."}
 bounds <- varbootstrap("HN", survey, real, survey.truncation, gradient.max.distance, 
-                       Nboot=9, plotit=TRUE, alpha=0.05)
+                       Nboot=999, plotit=TRUE, alpha=0.05)
 knitr::kable(data.frame(LCI=signif(unname(bounds$CIbounds[1]),4), 
                         UCI=signif(unname(bounds$CIbounds[2]),4)))
 ```
