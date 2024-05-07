@@ -1,4 +1,19 @@
 url: https://erex.github.io/densgrad
 template:
   bootstrap: 5
+  bslib:
+    bg: "#fcfaf2"
+    fg: "#14059e"
+    primary: "#0542a3"
 
+footer:
+
+authors:
+  footer:
+    roles: [cre, aut]
+    text: "Crafted by"
+  sidebar:
+    roles: [aut, ctb]
+    before: "So *who* does the work?"
+    after: "Thanks all!"
+  before: "This package is proudly brought to you by: :pray:"
